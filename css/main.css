@@ -1,15 +1,16 @@
 * {
     margin: 0px;
+    color: #700505;
+    
 }
 
 body {
-    background-color: #12599c;
+    background-image: url(../img/bg.gif);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: #5259bc;
 }
 
 ul {
@@ -22,20 +23,28 @@ li {
     list-style-type: none;
     padding: 15px 40px;
     font-size: 20px;
-    color: #fff;
-    /* background-color: #3333aa; */
 }
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
 a:hover {
-    background-color: #12599c;
+    background-color: #70252530;
+}
+
+article {
+    width: 45%;
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
 }
 
 .navbar_center {
-    width: 40%;
+    min-width: 50%;
     justify-content: center;
 }
