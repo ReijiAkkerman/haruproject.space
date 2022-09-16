@@ -1,0 +1,37 @@
+* {
+    margin: 0px;
+}
+
+body {
+    background-color: #12599c;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: blue;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    padding-inline-start: 0px;
+}
+
+li {
+    list-style-type: none;
+    padding: 15px;
+    font-size: 20px;
+    color: #fff;
+    background-color: green;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar_center {
+    width: 40%;
+    justify-content: space-around;
+}
