@@ -9,7 +9,7 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: blue;
+    background-color: #5259bc;
 }
 
 ul {
@@ -20,10 +20,10 @@ ul {
 
 li {
     list-style-type: none;
-    padding: 15px;
+    padding: 15px 40px;
     font-size: 20px;
     color: #fff;
-    background-color: green;
+    /* background-color: #3333aa; */
 }
 
 a {
@@ -31,7 +31,11 @@ a {
     color: inherit;
 }
 
+a:hover {
+    background-color: #12599c;
+}
+
 .navbar_center {
     width: 40%;
-    justify-content: space-around;
+    justify-content: center;
 }
