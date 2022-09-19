@@ -1,9 +1,19 @@
 * {
     font-family: kybercontent;
     font-variant: small-caps;
+    text-decoration: none;
     margin: 0;
     color: #800505;
     letter-spacing: 2px;
+}
+
+body {
+    background-image: url(../assets/img/bg.gif);
+    background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
 }
 
 ul {
@@ -14,25 +24,27 @@ li {
     list-style-type: none;
 }
 
-a {
-    text-decoration: none;
-}
-
-body {
-    background-image: url(../assets/img/bg.gif);
-}
-
 /* header  */
+
+header {
+    background-image: url(../assets/img/bg.gif);
+    z-index: 1;
+    width: 100%;
+    min-width: 1152px;
+    top: 0;
+}
 
 .navbar {
     background-color: #40050530;
+    border-bottom: 1px #5e0005 solid;
 }
 
 .navbar li {
     font-size: 20px;
     padding: 20px 35px;
     font-family: kyberheader;
-    border: 1px #5e0005 solid;
+    border-left: 1px #5e0005 solid;
+    border-right: 1px #5e0005 solid;
 }
 
 .navbar li:hover {
@@ -88,7 +100,8 @@ p {
     /* Основной контент */
 
 .articles {
-    margin: 25px auto;
+    margin: 80px auto;
+    margin-bottom: 0;
     width: 700px;
     text-align: center;
 }
@@ -150,7 +163,7 @@ label {
     padding: 10px 20px;
 }
 
-button {
+#registration {
     font-size: 25px;
     padding: 10px;
     margin: 10px 0;
@@ -158,7 +171,7 @@ button {
     border: none;
 }
 
-button:hover {
+#registration:hover {
     background-color: #90252530;
     border: 1px #5e0005 solid;
     border-top: none;
@@ -177,4 +190,39 @@ input:focus {
     border: 1px #5e0005 solid;
     border-left: none;
     border-right: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.calendar_frame {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 2000px;
+}
+
+.calendar {
+    background-color: #40050530;
+    height: 100%;
+}
+
+.day_of_week {
+    border-right: 1px #5e0005 solid;
+    border-bottom: 1px #5e0005 solid;
+}
+
+.last_right_el {
+    border-right: none;
+}
+
+.last_bottom_el {
+    border-bottom: none;
+}
+
+.way {
+    border-bottom: 1px #5e0005 solid;
 }

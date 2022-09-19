@@ -6,12 +6,12 @@ body {
 
 header {
     display: inherit;
+    position: fixed;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 
 .navbar_center {
@@ -60,4 +60,30 @@ aside {
 
 label {
     display: inline-block;
+}
+
+.calendar_frame {
+    display: block;
+    position: fixed;
+}
+
+.calendar {
+    display: grid;
+    position: relative;
+}
+
+.week {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.day_of_week {
+    display: block;
+    position: relative;
+}
+
+.way {
+    display: flex;
+    justify-content: space-between;
 }
