@@ -1,0 +1,14 @@
+@font-face {
+    font-family: sao;
+    src:url(../assets/fonts/SAOUITT-Regular.ttf);
+}
+
+@font-face {
+    font-family: kybercontent;
+    src: url(../assets/fonts/SkylineBeachNbpRegular.ttf);
+}
+
+@font-face {
+    font-family: kyberheader;
+    src: url(../assets/fonts/JxTabeDemoRegular.ttf);
+}

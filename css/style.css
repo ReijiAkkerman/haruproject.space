@@ -1,0 +1,180 @@
+* {
+    font-family: kybercontent;
+    font-variant: small-caps;
+    margin: 0;
+    color: #800505;
+    letter-spacing: 2px;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-image: url(../assets/img/bg.gif);
+}
+
+/* header  */
+
+.navbar {
+    background-color: #40050530;
+}
+
+.navbar li {
+    font-size: 20px;
+    padding: 20px 35px;
+    font-family: kyberheader;
+    border: 1px #5e0005 solid;
+}
+
+.navbar li:hover {
+    background-color: #90252530;
+}
+
+.navbar_center li {
+    margin: 0 15px;
+}
+
+/* body  */
+
+    /* Боковые панели задач */
+
+#right_taskbar {
+    bottom: 0;
+    right: 0;
+    width: 370px;
+}
+
+#left_taskbar{
+    top: 150px;
+    left: 0;
+    width: 300px;
+}
+
+.task {
+    margin-top: 10px;
+    background-color: #40050530;
+    border: 1px#5e0005 solid;
+}
+
+.taskrow {
+    border-bottom: 1px #5e0005 solid;
+}
+
+h5 {
+    padding: 2px 10px;
+    font-size: 20px;
+}
+
+h6 {
+    padding: 2px 10px;
+    font-size: 20px;
+}
+
+p {
+    font-family: sao;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+    /* Основной контент */
+
+.articles {
+    margin: 25px auto;
+    width: 700px;
+    text-align: center;
+}
+
+.content_block {
+    padding: 25px 0;
+    margin: 25px 0;
+}
+
+.subblock {
+    box-sizing: border-box;
+    border: 1px #5e0005 solid;
+    background-color: #90101010;
+}
+
+.content_block::before {
+    content: "";
+    top: 1px;
+    left: 0;
+    width: 700px;
+    height: 25px;
+    background: url(../assets/img/border.png) top left no-repeat;
+    transform: rotate(180deg);
+}
+
+.content_block::after {
+    content: "";
+    bottom: 1px;
+    left: 0;
+    width: 700px;
+    height: 25px;
+    background: url(../assets/img/border.png) bottom left no-repeat;
+}
+
+h2 {
+    text-indent: 3px;
+    padding: 20px;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 30px;
+}
+
+h3 {
+    padding: 15px;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.content_block li {
+    text-align: left;
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+label {
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
+button {
+    font-size: 25px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: transparent;
+    border: none;
+}
+
+button:hover {
+    background-color: #90252530;
+    border: 1px #5e0005 solid;
+    border-top: none;
+    border-bottom: none;
+}
+
+input {
+    font-size: 18px;
+    background-color: #90252530;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+    box-sizing: content-box;
+    border: 1px #5e0005 solid;
+    border-left: none;
+    border-right: none;
+}

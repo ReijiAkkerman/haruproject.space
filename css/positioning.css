@@ -1,0 +1,63 @@
+body {
+    display: block;
+}
+
+/* header */
+
+header {
+    display: inherit;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navbar_center {
+    display: inherit;
+    justify-content: inherit;
+}
+
+/* body */
+
+aside {
+    display: block;
+    position: fixed;
+}
+
+.bar_borders {
+    display: inherit;
+    position: relative;
+}
+
+.task {
+    display: inherit;
+    position: inherit;
+}
+
+.taskrow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.articles {
+    display: block;
+    position: relative;
+}
+
+.content_block {
+    position: relative;
+}
+
+.content_block::before {
+    position: absolute;
+}
+
+.content_block::after {
+    position: absolute;
+}
+
+label {
+    display: inline-block;
+}
