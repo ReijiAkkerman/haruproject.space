@@ -87,3 +87,7 @@ label {
     display: flex;
     justify-content: space-between;
 }
+
+#registration {
+    display: block;
+}
