@@ -58,6 +58,31 @@ aside {
     position: absolute;
 }
 
+.content_bar {
+    display: block;
+    position: relative;
+}
+
+.date_time_bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date_time_bar ul {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.date_time_subbar {
+    display: block;
+    position: relative;
+}
+
+.date_time_subbar::before {
+    position: absolute;
+}
+
 label {
     display: inline-block;
 }

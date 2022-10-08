@@ -31,7 +31,7 @@ header {
     background-image: url(../assets/img/bg.gif);
     z-index: 1;
     width: 100%;
-    min-width: 1152px;
+    min-width: 1200px;
     top: 0;
 }
 
@@ -40,7 +40,7 @@ header {
     border-bottom: 1px #5e0005 solid;
 }
 
-.navbar li {
+.navbar div {
     font-size: 20px;
     padding: 20px 35px;
     font-family: kyberheader;
@@ -164,18 +164,46 @@ h3 {
     margin: 10px 0;
 }
 
+.date_time_bar li {
+    margin: 0;
+    padding: 10.3px 8px;
+}
+
+.date_time_subbar::before {
+    content: "";
+    top: -1px;
+    left: 0;
+    width: 10px;
+    height: 45px;
+    background-image: url(../assets/img/left_side_border.png);
+}
+
+.date_time_subbar {
+    padding-left: 10px;
+}
+
+.date_time_bar_second {
+    border-bottom: 1px #5e0005 solid;
+}
+
+.left_side_border {
+    margin: 0;
+    padding: 0;
+}
+
+    /* блок регистрации и входа */
+
 label {
     font-size: 25px;
     padding: 10px 20px;
 }
-
+    
 #registration {
-    font-size: 25px;
-    padding: 10px;
-    /* margin: 10px 0; */
-    margin: 10px auto;
-    background-color: transparent;
-    border: none;
+font-size: 25px;
+padding: 10px 30px;
+margin: 10px auto;
+background-color: transparent;
+border: none;
 }
 
 #registration:hover {
@@ -206,6 +234,8 @@ button {
     background-color: transparent;
     border: none;
 }
+
+    /* Окно органайзера */
 
 .calendar_frame {
     top: 0;
