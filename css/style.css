@@ -166,7 +166,7 @@ h3 {
 
 .date_time_bar li {
     margin: 0;
-    padding: 10.3px 8px;
+    padding: 10.3px 8px; 
 }
 
 .date_time_subbar::before {
