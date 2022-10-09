@@ -74,8 +74,10 @@ header {
 
 .task {
     margin-top: 10px;
-    background-color: #40050530;
+    /* background-color: #40050530; */
     border: 1px#5e0005 solid;
+    background-image: url(../assets/img/bg.gif);
+    z-index: 30;
 }
 
 .taskrow {
@@ -175,7 +177,7 @@ h3 {
     left: 0;
     width: 10px;
     height: 45px;
-    background-image: url(../assets/img/left_side_border.png);
+    background: url(../assets/img/left_side_border.png) top left no-repeat;
 }
 
 .date_time_subbar {
@@ -237,32 +239,25 @@ button {
 
     /* Окно органайзера */
 
-.calendar_frame {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    max-width: 2000px;
+
+
+    /* footer */
+
+footer {
+    border-top: 1px #5e0005 solid;
+    z-index: -1;
 }
 
-.calendar {
-    background-color: #40050530;
-    height: 100%;
+.footer_block {
+    margin: 0 auto;
+    min-width: 1200px;
 }
 
-.day_of_week {
-    border-right: 1px #5e0005 solid;
-    border-bottom: 1px #5e0005 solid;
+.footer_list {
+    margin: 15px 40px;
 }
 
-.last_right_el {
-    border-right: none;
-}
-
-.last_bottom_el {
-    border-bottom: none;
-}
-
-.way {
-    border-bottom: 1px #5e0005 solid;
+.footer_list li {
+    margin: 5px 0;
+    font-size: 19px;
 }

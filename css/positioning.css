@@ -21,6 +21,8 @@ header {
 
 /* body */
 
+    /* Боковые панели */
+
 aside {
     display: block;
     position: fixed;
@@ -40,6 +42,8 @@ aside {
     display: flex;
     justify-content: space-between;
 }
+
+    /* Содержимое сайта */
 
 .articles {
     display: block;
@@ -87,32 +91,28 @@ label {
     display: inline-block;
 }
 
-.calendar_frame {
-    display: block;
-    position: fixed;
-}
-
-.calendar {
-    display: grid;
-    position: relative;
-}
-
-.week {
-    display: grid;
-    position: relative;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-.day_of_week {
-    display: block;
-    position: relative;
-}
-
-.way {
-    display: flex;
-    justify-content: space-between;
-}
-
 #registration {
     display: block;
+}
+
+    /* Органайзер */
+
+
+
+/* footer */
+
+footer {
+    display: block;
+    position: relative;
+}
+
+.footer_block {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.footer_list {
+    display: block;
+    position: relative;
 }
