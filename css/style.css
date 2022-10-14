@@ -74,9 +74,9 @@ header {
 
 .task {
     margin-top: 10px;
-    /* background-color: #40050530; */
+    background-color: #000;
     border: 1px#5e0005 solid;
-    background-image: url(../assets/img/bg.gif);
+    /* background-image: url(../assets/img/bg.gif); */
     z-index: 30;
 }
 
