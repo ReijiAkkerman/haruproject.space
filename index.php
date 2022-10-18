@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
     <?php
-        include "scripts/head.php";
+        include "scripts/index/head.php";
     ?>
     <body>
         <?php
-            include "scripts/header.php";
-            $a = 10;
+            include "scripts/index/header.php";
         ?>
         <section class="articles">
             <form class="content_block">

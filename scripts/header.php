@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar">
         <ul class="navbar_left">
-            <li><a href="index.php"><div>Logo</div></a></li>
+            <li><a href="../index.php"><div>Logo</div></a></li>
         </ul>
         <ul class="navbar_center">
             <li><a href="My_page.php"><div>Моя страница</div></a></li>
