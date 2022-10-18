@@ -1,28 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/fonts.css">
-        <link rel="stylesheet" href="../css/positioning.css">
-        <link rel="stylesheet" href="../css/style.css">
-    </head>
+    <?php
+        include "../scripts/head.php";
+    ?>
     <body>
-        <header>
-            <nav class="navbar">
-                <ul class="navbar_left">
-                    <li><a href="../index.html"><div>Logo</div></a></li>
-                </ul>
-                <ul class="navbar_center">
-                    <li><a href="My_page.html"><div>Моя страница</div></a></li>
-                    <li><a href="Organizer.html"><div>Органайзер</div></a></li>
-                    <li><a href="Progress.html"><div>Развитие</div></a></li>
-                    <li><a href="Diary.html"><div>Дневник</div></a></li>
-                </ul>
-                <ul class="navbar_right">
-                    <li><a href="LogIn.html"><div>Войти</div></a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php
+            include "../scripts/header.php";
+        ?>
         <section class="articles">
             <article class="content_block">
                 <div class="subblock">
@@ -109,19 +93,8 @@
                 </div>
             </article>
         </section>
-        <footer>
-            <div class="footer_block">
-                <ul class="footer_list">
-                    <a href=""><li>О проекте</li></a>
-                </ul>
-                <ul class="footer_list">
-                    <a href=""><li>Для разработчиков</li></a>
-                </ul>
-                <ul class="footer_list">
-                    <a href=""><li>Правообладателям</li></a>
-                    <a href=""><li>FAQ</li></a>
-                </ul>
-            </div>
-        </footer>
+        <?php
+            include "../scripts/footer.php";
+        ?>
     </body>
 </html>
