@@ -1,4 +1,4 @@
 <?php
-    xdebug_info();
+    // xdebug_info();
     phpinfo();
 ?>
