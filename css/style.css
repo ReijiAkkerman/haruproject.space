@@ -4,7 +4,8 @@
     font-variant: small-caps;
     text-decoration: none;
     margin: 0;
-    color: #800505;
+    /* color: #800505; */
+    color: #f00;
     letter-spacing: 2px;
     text-align: center;
 }
@@ -77,12 +78,14 @@ header {
     margin-top: 10px;
     background-color: #000;
     border: 1px#5e0005 solid;
+    /* border: 1px #f00 solid; */
     /* background-image: url(../assets/img/bg.gif); */
     z-index: 30;
 }
 
 .taskrow {
     border-bottom: 1px #5e0005 solid;
+    /* border-bottom: 1px #f00 solid; */
 }
 
 h5 {
@@ -118,6 +121,7 @@ p {
 .subblock {
     box-sizing: border-box;
     border: 1px #5e0005 solid;
+    /* border: 1px #f00 solid; */
     background-color: #90101010;
 }
 
@@ -202,11 +206,11 @@ label {
 }
     
 #registration {
-font-size: 25px;
-padding: 10px 30px;
-margin: 10px auto;
-background-color: transparent;
-border: none;
+    font-size: 25px;
+    padding: 10px 30px;
+    margin: 10px auto;
+    background-color: transparent;
+    border: none;
 }
 
 #registration:hover {
@@ -216,8 +220,19 @@ border: none;
     border-bottom: none;
 }
 
+#start_page {
+    margin: 0 auto;
+}
+
+#view_passwd {
+    
+}
+
+
+
 input {
     font-size: 18px;
+    /* color: #c00; */
     background-color: #90252530;
     border: none;
 }

@@ -4,23 +4,22 @@
         include "scripts/index/head.php";
     ?>
     <body>
-        <!-- <?php
-            include "scripts/index/header.php";
-        ?> -->
-        <section class="articles">
+        <section class="articles" id="start_page">
             <form class="content_block">
                 <div class="subblock">
                     <label for="LogIn">Имя пользователя</label>
                     <input type="text" name="LogIn" class="field">
-                    <label for="Password">Пароль</label>
-                    <input type="password" name="password" class="field">
+                    <label for="Password"><a href="#" onclick="return show_hide_password(this);">Пароль</a></label>
+                    <input type="password" name="password" class="field" id="view_passwd">
                     <button id="registration">Зарегистрироваться</button>
+                    <button id="registration" href="html/My_page.php"><a href="html/My_page.php">Войти</a></button>
+                    <!-- <a href="html/My_page.php" class="registration">Войти</a> -->
                 </div>
             </form>
             <article class="content_block">
                 <div class="subblock">
                     <h2>
-                        Зарегистрируйтесь, чтобы получить доступ к ресурсам проекта.
+                        Зарегистрируйтесь или войдите, чтобы получить доступ к ресурсам проекта.
                     </h2>
                     <h3>
                         После регистрации вам будут доступны следующие возможности:
@@ -34,18 +33,9 @@
                     </ul>
                 </div>
             </article>
-            <article class="content_block">
-                <div class="subblock">
-                    <h2>Войдите, если вы уже имеете аккаунт</h2>
-                    <form action="Log_In.php">
-                        <label for="Login">Имя пользователя</label>
-                        
-                    </form>
-                </div>
-            </article>
         </section>
-        <?php
+        <!-- <?php
             include "scripts/footer.php";
-        ?>
+        ?> -->
     </body>
 </html>
