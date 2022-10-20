@@ -4,9 +4,9 @@
         include "scripts/index/head.php";
     ?>
     <body>
-        <?php
+        <!-- <?php
             include "scripts/index/header.php";
-        ?>
+        ?> -->
         <section class="articles">
             <form class="content_block">
                 <div class="subblock">
@@ -32,6 +32,15 @@
                         <li>Хранение личных информационных ресурсов</li>
                         <li>Использование открытых ресурсов других пользователей</li>
                     </ul>
+                </div>
+            </article>
+            <article class="content_block">
+                <div class="subblock">
+                    <h2>Войдите, если вы уже имеете аккаунт</h2>
+                    <form action="Log_In.php">
+                        <label for="Login">Имя пользователя</label>
+                        
+                    </form>
                 </div>
             </article>
         </section>
