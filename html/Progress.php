@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <?php
-        include "../scripts/head.php";
+        include "more_usable/head.php";
     ?>
     <body>
         <?php
-            include "../scripts/header.php";
+            include "more_usable/header.php";
         ?>
         <?php
-            include "../scripts/footer.php";
+            include "more_usable/footer.php";
         ?>
     </body>
 </html>

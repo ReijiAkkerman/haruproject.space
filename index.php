@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <?php
-        include "scripts/index/head.php";
+        include "html/more_usable/index/head.php";
     ?>
     <body>
         <section class="articles" id="start_page">
@@ -13,7 +13,6 @@
                     <input type="password" name="password" class="field" id="view_passwd">
                     <button id="registration">Зарегистрироваться</button>
                     <button id="registration" href="html/My_page.php"><a href="html/My_page.php">Войти</a></button>
-                    <!-- <a href="html/My_page.php" class="registration">Войти</a> -->
                 </div>
             </form>
             <article class="content_block">
@@ -34,8 +33,5 @@
                 </div>
             </article>
         </section>
-        <!-- <?php
-            include "scripts/footer.php";
-        ?> -->
     </body>
 </html>
