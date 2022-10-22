@@ -5,16 +5,22 @@
     ?>
     <body>
         <section class="articles" id="start_page">
-            <form class="content_block">
+            <div class="content_block">
                 <div class="subblock">
-                    <label for="LogIn">Имя пользователя</label>
-                    <input type="text" name="LogIn" class="field">
-                    <label for="Password"><a href="#" onclick="return show_hide_password(this);">Пароль</a></label>
-                    <input type="password" name="password" class="field" id="view_passwd">
-                    <button id="registration">Зарегистрироваться</button>
-                    <button id="registration" href="html/My_page.php"><a href="html/My_page.php">Войти</a></button>
+                    <form action="html/My_page.php" method="POST">
+                        <label for="login">Имя пользователя</label>
+                        <input type="text" name="login" class="field" autocomplete="off">
+                        <label for="Password"><a href="#" onclick="return show_hide_password(this);">Пароль</a></label>
+                        <input type="password" name="password" class="field" id="view_passwd">
+                        <button class="registration">Зарегистрироваться</button>
+                    </form>
+                    <form action="html/My_page.php" method="POST">
+                        <input type="text" name="login" class="hidden">
+                        <input type="text" name="password" class="hidden">
+                        <button class="registration" id="login"><a href="html/My_page.php">Войти</a></button>
+                    </form>
                 </div>
-            </form>
+            </div>
             <article class="content_block">
                 <div class="subblock">
                     <h2>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <?php
+        include "../scripts/handlers/LogIn.php";
         include "more_usable/head.php";
     ?>
     <body>

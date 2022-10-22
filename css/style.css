@@ -205,30 +205,28 @@ label {
     padding: 10px 20px;
 }
     
-#registration {
+.registration {
     font-size: 25px;
     padding: 10px 30px;
-    margin: 10px auto;
+    margin: 10px auto 0;
     background-color: transparent;
     border: none;
 }
 
-#registration:hover {
+.registration:hover {
     background-color: #90252530;
     border: 1px #5e0005 solid;
     border-top: none;
     border-bottom: none;
 }
 
+#login {
+    margin-bottom: 10px;
+}
+
 #start_page {
     margin: 0 auto;
 }
-
-#view_passwd {
-    
-}
-
-
 
 input {
     font-size: 18px;
@@ -246,6 +244,10 @@ input:focus {
 
 .field {
     width: 150px;
+}
+
+.hidden {
+    display: none;
 }
 
 button {
