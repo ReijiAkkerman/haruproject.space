@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <?php
-        include "html/more_usable/index/head.php";
-    ?>
+    <head>
+        <?php
+            include "html/more_usable/index/head.php";
+        ?>
+        <script src="js/data_copying.js"></script>
+    </head>
     <body>
         <section class="articles" id="start_page">
             <div class="content_block">
                 <div class="subblock">
-                    <form action="html/My_page.php" method="POST">
+                    <form action="scripts/handlers/LogIn.php" method="POST">
                         <label for="login">Имя пользователя</label>
-                        <input type="text" name="login" class="field" autocomplete="off">
+                        <input type="text" name="login" class="field" autocomplete="off" id="input_login">
                         <label for="Password"><a href="#" onclick="return show_hide_password(this);">Пароль</a></label>
-                        <input type="password" name="password" class="field" id="view_passwd">
+                        <input type="password" name="password" class="field" id="input_password">
                         <button class="registration">Зарегистрироваться</button>
                     </form>
-                    <form action="html/My_page.php" method="POST">
-                        <input type="text" name="login" class="hidden">
-                        <input type="text" name="password" class="hidden">
-                        <button class="registration" id="login"><a href="html/My_page.php">Войти</a></button>
+                    <form action="scripts/handlers/LogIn1.php" method="POST">
+                        <input type="text" name="login" class="hidden" id="output_login">
+                        <input type="password" name="password" class="hidden" id="output_password">
+                        <button class="registration copying" id="login_btn"><a href="#">Войти</a></button>
                     </form>
                 </div>
             </div>

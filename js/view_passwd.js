@@ -1,5 +1,5 @@
 function show_hide_password(target){
-	var input = document.getElementById('view_passwd');
+	var input = document.getElementById('input_password');
 	if (input.getAttribute('type') == 'password') {
 		target.classList.add('view');
 		input.setAttribute('type', 'text');

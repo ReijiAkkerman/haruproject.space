@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <?php
-        include "../scripts/handlers/LogIn.php";
-        include "more_usable/head.php";
-    ?>
+    <head>
+        <?php
+            include "../scripts/handlers/LogIn.php";
+            include "more_usable/head.php";
+        ?>
+    </head>
     <body>
         <?php
             include "more_usable/header.php";

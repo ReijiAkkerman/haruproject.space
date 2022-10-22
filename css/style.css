@@ -207,7 +207,7 @@ label {
     
 .registration {
     font-size: 25px;
-    padding: 10px 30px;
+    padding: 10px 50px;
     margin: 10px auto 0;
     background-color: transparent;
     border: none;
@@ -220,7 +220,7 @@ label {
     border-bottom: none;
 }
 
-#login {
+#login_btn {
     margin-bottom: 10px;
 }
 

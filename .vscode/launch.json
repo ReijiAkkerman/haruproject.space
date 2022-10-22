@@ -15,6 +15,7 @@
             "type": "php",
             "request": "launch",
             "program": "${file}",
+            // "program": "~"
             "cwd": "${fileDirname}",
             "port": 0,
             "runtimeArgs": [

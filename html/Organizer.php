@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <?php
-        include "more_usable/head.php";
-    ?>
+    <head>
+        <?php
+            include "more_usable/head.php";
+        ?>
+    </head>
     <body>
         <?php
             include "more_usable/header.php";
