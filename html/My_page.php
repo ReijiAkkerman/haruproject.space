@@ -2,6 +2,7 @@
 <html>
     <head>
         <?php
+            include "../html/Core/Input.php";
             include "../html/Core/Loging.php";
             include "more_usable/head.php";
         ?>
