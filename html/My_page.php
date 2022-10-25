@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php
-            include "../scripts/handlers/LogIn.php";
+            include "../html/Core/Loging.php";
             include "more_usable/head.php";
         ?>
     </head>

@@ -16,7 +16,7 @@
                     <input type="text" name="LogIn" class="field">
                     <label for="Password">Пароль</label>
                     <input type="password" name="password" class="field">
-                    <button id="registration">Войти</button>
+                    <button class="registration" id="login_btn">Войти</button>
                 </div>
             </form>
         </section>

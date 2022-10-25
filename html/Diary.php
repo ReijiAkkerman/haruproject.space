@@ -13,16 +13,10 @@
             <article class="content_block">
                 <div class="subblock">
                     <div class="date_time_bar">
-                        <ul>
-                            <li>sun</li>
-                            <li>vi</li>
-                        </ul>
+                        <ul></ul>
                         <div class="date_time_subbar">
                             <ul class="date_time_bar_second">
-                                <li>St</li>
-                                <li>2022</li>
-                                <li>10</li>
-                                <li>08</li>
+                                <li>2022.00.00</li>
                                 <li>01:49:55</li>
                             </ul>
                         </div>
