@@ -22,8 +22,8 @@
                 if($temp === $password)
                     $val_pass = true;
                 if(($val_login === true) && ($val_pass === true)) {
-                    echo "Логин и пароль введены верно\n";
-                    exit(0);
+                    // echo "Логин и пароль введены верно\n";
+                    // exit(0);
                 }
                 else {
                     echo "Неверный логин или пароль\n";

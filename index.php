@@ -14,11 +14,13 @@
                         <input type="text" name="login" class="field" autocomplete="off" id="input_login">
                         <label for="Password"><a href="#" onclick="return show_hide_password(this);">Пароль</a></label>
                         <input type="password" name="password" class="field" id="input_password">
+                        <input type="hidden" name="pointer" value="registration">
                         <button class="registration">Зарегистрироваться</button>
                     </form>
                     <form action="html/My_page.php" method="POST">
                         <input type="text" name="login" class="hidden" id="output_login">
                         <input type="password" name="password" class="hidden" id="output_password">
+                        <input type="hidden" name="pointer" value="login">
                         <button class="registration copying" id="login_btn">Войти</button>
                     </form>
                 </div>
