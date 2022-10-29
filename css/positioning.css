@@ -43,6 +43,21 @@ aside {
     justify-content: space-between;
 }
 
+.toolbar {
+    display: block;
+    position: absolute;
+}
+
+.tool_item {
+    display: block;
+    position: relative;
+}
+
+.tool_item > ul {
+    display: block;
+    /* align-items: center; */
+}
+
     /* Содержимое сайта */
 
 .articles {

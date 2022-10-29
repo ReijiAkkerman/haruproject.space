@@ -1,5 +1,6 @@
 <?php
     $status = 0;
+    $values = 2;
     try {
         $connection = mysqli_connect("localhost", "UsersDistributor", "78737873", "Users");
     }
@@ -56,6 +57,11 @@
             mysqli_query($connection1, $mysql_command);
             $mysql_command = "FLUSH PRIVILEGES";
             mysqli_query($connection1, $mysql_command);
+            $mysql_command = "USE $login";
+            mysqli_query($connection1, $mysql_command);
+            $mysql_command = "CREATE TABLE IF NOT EXISTS Diary (id INT PRIMARY KEY AUTO_INCREMENT, year INT, month TINYINT, day TINYINT, hour TINYINT, minute TINYINT, second TINYINT, header TINYTEXT, text TEXT)";
+            mysqli_query($connection1, $mysql_command);
+            $values = 0;
         }
     }
     else {

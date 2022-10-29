@@ -13,7 +13,7 @@
             <form class="content_block">
                 <div class="subblock">
                     <label for="LogIn">Имя пользователя</label>
-                    <input type="text" name="LogIn" class="field">
+                    <input type="text" name="login" class="field">
                     <label for="Password">Пароль</label>
                     <input type="password" name="password" class="field">
                     <button class="registration" id="login_btn">Войти</button>

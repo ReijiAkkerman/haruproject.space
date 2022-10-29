@@ -61,10 +61,10 @@ header {
 /* body  */
 
     /* Боковые панели задач */
-
-#right_taskbar {
-    bottom: 0;
-    right: 0;
+    
+    #right_taskbar {
+        bottom: 0;
+        right: 0;
     width: 370px;
 }
 
@@ -104,7 +104,29 @@ p {
     padding: 10px 20px;
 }
 
-    /* Основной контент */
+.toolbar {
+    top: 80px;
+    right: 0;
+    /* padding: 5px; */
+    border-bottom: 1px #5e0005 solid;
+    border-top: 1px #5e0005 solid;
+    border-left: 1px #5e0005 solid;
+}
+
+.tool_item {
+    background-color: #40050530;
+}
+
+.tool_item:hover {
+    background-color: #90252530;
+}
+
+.tool_item > ul > li {
+    padding: 9px;
+    padding-bottom: 5px;
+}
+
+/* Основной контент */
 
 .articles {
     margin: 80px auto;
@@ -198,13 +220,17 @@ h3 {
     padding: 0;
 }
 
-    /* блок регистрации и входа */
+#central_button {
+    margin-bottom: 10px;
+}
+
+/* блок регистрации и входа */
 
 label {
     font-size: 25px;
     padding: 10px 20px;
 }
-    
+
 .registration {
     font-size: 25px;
     padding: 10px 50px;
@@ -253,13 +279,15 @@ input:focus {
 button {
     background-color: transparent;
     border: none;
+    padding: 0; 
 }
 
-    /* Окно органайзера */
+
+/* Окно органайзера */
 
 
 
-    /* footer */
+/* footer */
 
 footer {
     border-top: 1px #5e0005 solid;
