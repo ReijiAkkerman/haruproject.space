@@ -3,7 +3,7 @@
     <head>
         <?php
             if($_POST['pointer'] == 'registration') include "../html/Core/Loging.php";
-            elseif($_POST['pointer'] == 'login') include "../html/Core/Input.php";
+            else if($_POST['pointer'] == 'login') include "../html/Core/Input.php";
             include "more_usable/head.php";
         ?>
     </head>
