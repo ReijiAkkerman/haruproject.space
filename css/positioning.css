@@ -45,7 +45,7 @@ aside {
 
 .toolbar {
     display: block;
-    position: absolute;
+    position: fixed;
 }
 
 .tool_item {
@@ -55,7 +55,6 @@ aside {
 
 .tool_item > ul {
     display: block;
-    /* align-items: center; */
 }
 
     /* Содержимое сайта */
@@ -118,12 +117,11 @@ label {
 
 footer {
     display: block;
-    position: relative;
+    position: fixed;
 }
 
 .footer_block {
     display: flex;
-    position: relative;
     justify-content: center;
 }
 
