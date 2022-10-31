@@ -10,7 +10,7 @@
             <li><a href="Diary.php"><div>Дневник</div></a></li>
         </ul>
         <ul class="navbar_right">
-            <li><a href="LogIn.php"><div>Войти</div></a></li>
+            <li><a href="LogIn.php"><div>Выйти</div></a></li>
         </ul>
     </nav>
 </header>

@@ -7,11 +7,4 @@
             </div>
         </div>
     </article>
-    <article class="content_block">
-        <div class="subblock">
-            <div class="content_bar">
-                <h3><button class="registration" id="central_button">Создать первую запись.</button></h3>
-            </div>
-        </div>
-    </article>
 </section>

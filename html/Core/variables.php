@@ -1,0 +1,3 @@
+<?php
+    $Connection = 0;
+?>

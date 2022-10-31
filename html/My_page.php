@@ -2,8 +2,10 @@
 <html>
     <head>
         <?php
-            if($_POST['pointer'] == 'registration') include "../html/Core/Loging.php";
-            else if($_POST['pointer'] == 'login') include "../html/Core/Input.php";
+            include "Core/variables.php";
+            if($_POST['pointer'] == 'registration') include "Core/Loging.php";
+            else if($_POST['pointer'] == 'login') include "Core/Input.php";
+            
             include "more_usable/head.php";
         ?>
     </head>
@@ -11,7 +13,7 @@
         <?php
             include "more_usable/header.php";
         ?>
-        <section>
+        <section class="articles">
             <?php
                 include "Core/Main_content.php";
             ?>

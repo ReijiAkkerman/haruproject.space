@@ -27,6 +27,8 @@
             if($validation == false) {
                 $mysql_command = "INSERT users(login, password) VALUES ('$login', '$password')";
                 mysqli_query($connection, $mysql_command);
+                $mysql_command = "INSERT active_users(login, password, active) VALUES ('$login', '$password', '1')";
+                mysqli_query($connection, $mysql_command);
             }
             else {
                 $status = 3;
@@ -59,7 +61,7 @@
             mysqli_query($connection1, $mysql_command);
             $mysql_command = "USE $login";
             mysqli_query($connection1, $mysql_command);
-            $mysql_command = "CREATE TABLE IF NOT EXISTS Diary (id INT PRIMARY KEY AUTO_INCREMENT, year INT, month TINYINT, day TINYINT, hour TINYINT, minute TINYINT, second TINYINT, header TINYTEXT, text TEXT)";
+            $mysql_command = "CREATE TABLE IF NOT EXISTS Diary (id INT PRIMARY KEY AUTO_INCREMENT, date DATE, time TIME, header TINYTEXT, text TEXT)";
             mysqli_query($connection1, $mysql_command);
             $values = 0;
         }
