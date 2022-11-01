@@ -2,7 +2,6 @@
 <html>
     <head>
         <?php
-            include "Core/variables.php";
             if($_POST['pointer'] == 'registration') include "Core/Loging.php";
             else if($_POST['pointer'] == 'login') include "Core/Input.php";
             

@@ -63,7 +63,12 @@
             mysqli_query($connection1, $mysql_command);
             $mysql_command = "CREATE TABLE IF NOT EXISTS Diary (id INT PRIMARY KEY AUTO_INCREMENT, date DATE, time TIME, header TINYTEXT, text TEXT)";
             mysqli_query($connection1, $mysql_command);
+            $mysql_command = "USE Users";
+            mysqli_query($connection1, $mysql_command);
+            $mysql_command = "INSERT last_user(login, password) VALUES ('$login', '$password')";
+            mysqli_query($connection1, $mysql_command);
             $values = 0;
+            $connect = 0;
         }
     }
     else {

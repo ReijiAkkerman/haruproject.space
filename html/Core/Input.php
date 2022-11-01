@@ -26,8 +26,10 @@
                     $temp = $row["password"];
                     if($temp === $password)
                         $val_pass = true;
-                    if(($val_login === true) && ($val_pass === true))
+                    if(($val_login === true) && ($val_pass === true)) {
                         $status = 0;
+                        $connect = 0;
+                    }
                 }
             }
         }
