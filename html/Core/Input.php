@@ -27,8 +27,17 @@
                     if($temp === $password)
                         $val_pass = true;
                     if(($val_login === true) && ($val_pass === true)) {
+                        $mysql_command = "SELECT * FROM active_users WHERE login='$login'";
+                        $value = mysqli_query($connection, $mysql_command);
+                        foreach($value as $row) {
+                            if($row["login"] == $login)
+                            $id = $row["id"];
+                        }
+                        session_start();
+                        $_SESSION["id"] = $id;
+                        $_SESSION["login"] = $login;
                         $status = 0;
-                        $connect = 0;
+                        $CONNECTION = 0;
                     }
                 }
             }

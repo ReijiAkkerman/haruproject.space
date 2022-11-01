@@ -8,8 +8,8 @@
         $status = 2;
         goto b;
     }
-    $login;
-    $password;
+    $login = "Reiji3";
+    $password = "Yasura";
     if(isset($_POST["login"]))
         $login = $_POST["login"];
     if(isset($_POST["password"]))
@@ -29,6 +29,15 @@
                 mysqli_query($connection, $mysql_command);
                 $mysql_command = "INSERT active_users(login, password, active) VALUES ('$login', '$password', '1')";
                 mysqli_query($connection, $mysql_command);
+                $mysql_command = "SELECT * FROM active_users WHERE login='$login'";
+                $value = mysqli_query($connection, $mysql_command);
+                foreach($value as $row) {
+                    if($row["login"] == $login)
+                        $id = $row["id"];
+                }
+                session_start();
+                $_SESSION["id"] = $id;
+                $_SESSION["login"] = $login;
             }
             else {
                 $status = 3;
@@ -46,6 +55,8 @@
                 $connection1 = mysqli_connect("localhost", "UsersDistributor", "78737873", "Users");
                 $mysql_command = "DELETE FROM users WHERE login='$login'";
                 mysqli_query($connection1, $mysql_command);
+                $mysql_command = "DELETE FROM active_users WHERE login='$login'";
+                mysqli_query($connection, $mysql_command);
                 mysqli_close($connection1);
                 goto b;
             }
@@ -63,12 +74,8 @@
             mysqli_query($connection1, $mysql_command);
             $mysql_command = "CREATE TABLE IF NOT EXISTS Diary (id INT PRIMARY KEY AUTO_INCREMENT, date DATE, time TIME, header TINYTEXT, text TEXT)";
             mysqli_query($connection1, $mysql_command);
-            $mysql_command = "USE Users";
-            mysqli_query($connection1, $mysql_command);
-            $mysql_command = "INSERT last_user(login, password) VALUES ('$login', '$password')";
-            mysqli_query($connection1, $mysql_command);
             $values = 0;
-            $connect = 0;
+            $CONNECTION = 0;
         }
     }
     else {
