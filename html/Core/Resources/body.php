@@ -1,6 +1,6 @@
 <body>
     <?php
-        include "more_usable/header.php";
+        if(!$CONNECTION) include "more_usable/header.php";
     ?>
     <section class="articles">
         <?php
@@ -8,6 +8,6 @@
         ?>
     </section>
     <?php
-        include "more_usable/footer.php";
+        if(!$CONNECTION) include "more_usable/footer.php";
     ?>
 </body>

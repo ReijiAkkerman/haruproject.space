@@ -1,7 +1,7 @@
 <?php
-    $login = ["Reiji"];
+    $login = ["Reiji", "Reiji4", "Reiji1"];
     $connection = mysqli_connect("localhost", "root", "KisaragiEki4");
-    for((int) $i = 0; (int) $i < 1; (int) $i++) {
+    for((int) $i = 0; (int) $i < 3; (int) $i++) {
         $mysql_command = "DROP USER IF EXISTS '$login[$i]'@'localhost'";
         mysqli_query($connection, $mysql_command);
         $mysql_command = "DROP DATABASE IF EXISTS $login[$i]";

@@ -20,7 +20,6 @@
     }
     if(!$values) { 
         include "components/values0.php";
-        include "components/toolbar.php";
     }
     else { 
         include "components/values1.php";

@@ -8,8 +8,8 @@
         $status = 2;
         goto b;
     }
-    $login = "Reiji3";
-    $password = "Yasura";
+    $login;
+    $password;
     if(isset($_POST["login"]))
         $login = $_POST["login"];
     if(isset($_POST["password"]))
@@ -21,8 +21,10 @@
             $searching_login = mysqli_query($connection, $mysql_command);
             foreach($searching_login as $row) {
                 $temp = $row["login"];
-                if($temp === $login)
+                if($temp === $login) {
                     $validation = true;
+                    break;
+                }
             }
             if($validation == false) {
                 $mysql_command = "INSERT users(login, password) VALUES ('$login', '$password')";
@@ -72,7 +74,7 @@
             mysqli_query($connection1, $mysql_command);
             $mysql_command = "USE $login";
             mysqli_query($connection1, $mysql_command);
-            $mysql_command = "CREATE TABLE IF NOT EXISTS Diary (id INT PRIMARY KEY AUTO_INCREMENT, date DATE, time TIME, header TINYTEXT, text TEXT)";
+            $mysql_command = "CREATE TABLE IF NOT EXISTS Diary (id INT PRIMARY KEY AUTO_INCREMENT, date DATE, time TIME, sun TINYTEXT, header TINYTEXT, text TEXT)";
             mysqli_query($connection1, $mysql_command);
             $values = 0;
             $CONNECTION = 0;
