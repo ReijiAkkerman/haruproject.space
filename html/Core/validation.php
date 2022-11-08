@@ -12,10 +12,15 @@
             if($row["login"] == $login)
                 $val_login = 1;
         }
-        if($val_id === $val_login) {
+        if(isset($val_id) === isset($val_login)) {
             $values = 0;
             $status = 0;
-            $CONNECTION = 0;
         }
+        else {
+            $status = 5;
+        }
+    }
+    else {
+        $status = 2;
     }
 ?>

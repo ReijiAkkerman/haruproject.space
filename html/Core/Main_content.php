@@ -16,5 +16,8 @@
             case 4:
                 include "Resources/errors/status4.php";
                 break;
+            case 5:
+                include "Resources/errors/status5.php";
+                break;
         }
 ?>
