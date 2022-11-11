@@ -1,131 +1,49 @@
 body {
     display: block;
-}
-
-/* header */
-
-header {
-    display: inherit;
-    position: fixed;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-}
-
-.navbar_center {
-    display: inherit;
-    justify-content: inherit;
-}
-
-/* body */
-
-    /* Боковые панели */
-
-aside {
-    display: block;
-    position: fixed;
-}
-
-.bar_borders {
-    display: inherit;
     position: relative;
 }
 
-.task {
-    display: inherit;
-    position: inherit;
-}
-
-.taskrow {
-    display: flex;
-    justify-content: space-between;
-}
-
-.toolbar {
-    display: block;
-    position: fixed;
-}
-
-.tool_item {
+.Contents {
     display: block;
     position: relative;
 }
 
-.tool_item > ul {
-    display: block;
-}
-
-    /* Содержимое сайта */
-
-.articles {
+.wrapContentsItem {
     display: block;
     position: relative;
 }
 
-.content_block {
-    position: relative;
-}
-
-.content_block::before {
+.wrapContentsItem::before {
+    display: block;
     position: absolute;
 }
 
-.content_block::after {
+.wrapContentsItem::after {
+    display: block;
     position: absolute;
 }
 
-.content_bar {
+.ContentsItem {
     display: block;
     position: relative;
 }
 
-.date_time_bar {
-    display: flex;
-    justify-content: space-between;
-}
-
-.date_time_bar ul {
-    display: flex;
-    justify-content: flex-start;
-    position: relative;
-}
-
-.date_time_subbar {
+.ContentsItemHeader {
     display: block;
     position: relative;
 }
 
-.date_time_subbar::before {
-    position: absolute;
-}
-
-label {
-    display: inline-block;
-}
-
-#registration {
+.ContentsItemHeader > span {
     display: block;
+    position: relative;
 }
 
-    /* Органайзер */
-
-
-
-/* footer */
-
-footer {
+.ContentsItem > form {
     display: block;
-    position: fixed;
+    position: relative;
 }
 
-.footer_block {
-    display: flex;
-    justify-content: center;
-}
-
-.footer_list {
+.ContentsItem button {
     display: block;
     position: relative;
 }
