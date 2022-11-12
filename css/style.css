@@ -86,10 +86,11 @@ input {
     margin: 0 auto 10px;
     padding: 5px 15px;
     font-size: 25px;
-    background-color: #5002;
+    background-color: #0000;
 }
 
 .ContentsItem button:hover {
+    background-color: #5004;
     border: 1px #f00 solid;
     border-bottom: none;
     border-top: none;
