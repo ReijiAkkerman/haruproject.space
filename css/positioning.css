@@ -43,6 +43,12 @@ body {
     position: relative;
 }
 
+.ContentsItemInput {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
 .ContentsItem button {
     display: block;
     position: relative;

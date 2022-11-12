@@ -11,6 +11,7 @@
     text-decoration: none;
     outline: none;
     border: none;
+    font-size: 25px;
 }
 
 body {
@@ -28,7 +29,10 @@ input {
     border: 1px #500 solid;
     border-left: none;
     border-right: none;
-    margin: 10px 0;
+}
+
+input:focus {
+    border-color: #f00;
 }
 
 .Contents {
@@ -61,6 +65,7 @@ input {
 
 .ContentsItem {
     border: 1px #500 solid;
+    background-color: #5002;
 }
 
 .ContentsItemHeader {
@@ -82,8 +87,17 @@ input {
     text-align: left;
 }
 
+.ContentsItem > form {
+    width: 400px;
+    margin: 10px auto;
+}
+
+.ContentsItemInput {
+    margin: 10px 30px;
+}
+
 .ContentsItem button {
-    margin: 0 auto 10px;
+    margin: 0 auto 0;
     padding: 5px 15px;
     font-size: 25px;
     background-color: #0000;
