@@ -1,5 +1,6 @@
 <?php
-    // phpinfo();
-    xdebug_info();
-    // var_dump(php_ini_loaded_file(), php_ini_scanned_files());
+    echo ini_get('display_errors');
+    if(!ini_get('display_errors'))
+        ini_set('display_errors', '1');
+    echo ini_get('display_errors');
 ?>

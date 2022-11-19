@@ -19,9 +19,34 @@ body {
     margin: 0;
 }
 
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+header {
+    top: 0;
+    left: -231px;
+    z-index: 1;
+}
+
+header:hover {
+    left: 0;
+}
+
 h2 {
-    font-family: cyber1;
-    font-size: 25px;
+    padding: 15px 30px;
+}
+
+li {
+    width: 200px;
+    padding: 15px;
+    /* margin: 0 0 10px 0; */
+    border: 1px #500 solid;
+}
+
+li:hover {
+    border: 1px #f00 solid;
+    background-color: #200;
 }
 
 input {
@@ -42,6 +67,7 @@ input:focus {
 
 .wrapContentsItem {
     padding: 25px 0;
+    margin: 0 0 22px 0;
 }
 
 .wrapContentsItem::before {
@@ -108,4 +134,50 @@ input:focus {
     border: 1px #f00 solid;
     border-bottom: none;
     border-top: none;
+}
+
+.Menu {
+    background-color: #000;
+}
+
+.Calendar {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(53, 240px);
+}
+
+.CalendarElement {
+    background-color: #5002;
+    border: 1px #f00 solid;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.CalendarElementHeader {
+    height: 30px;
+    background-color: #5004;
+    border-bottom: 1px #f00 solid;
+}
+
+.CalendarElementLabel {
+    height: 50px;
+    border-bottom: 1px #a00 solid;
+}
+
+.inactiveCalendarElement {
+    background-color: #0000;
+    border: 1px #500 solid;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inactiveCalendarElementHeader {
+    height: 30px;
+    background-color: #5002;
+    border-bottom: 1px #500 solid;
+    color: #500;
+}
+
+.inactiveCalendarElementLabel {
+    height: 50px;
+    border-bottom: 1px #500 solid;
 }

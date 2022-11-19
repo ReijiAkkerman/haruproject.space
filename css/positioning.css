@@ -3,6 +3,26 @@ body {
     position: relative;
 }
 
+header {
+    display: block;
+    position: fixed;
+}
+
+input {
+    display: block;
+    position: relative;
+}
+
+button {
+    display: block;
+    position: relative;
+}
+
+li {
+    display: block;
+    position: relative;
+}
+
 .Contents {
     display: block;
     position: relative;
@@ -50,6 +70,47 @@ body {
 }
 
 .ContentsItem button {
+    display: block;
+    position: relative;
+}
+
+.Menu {
+    display: block;
+    position: relative;
+}
+
+.Calendar {
+    display: grid;
+}
+
+.CalendarElement {
+    display: block;
+    position: relative;
+}
+
+.CalendarElementHeader {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.CalendarElementLabel {
+    display: block;
+    position: relative;
+}
+
+.inactiveCalendarElement {
+    display: block;
+    position: relative;
+}
+
+.inactiveCalendarElementHeader {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.inactiveCalendarElementLabel {
     display: block;
     position: relative;
 }
