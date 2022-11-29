@@ -1,0 +1,15 @@
+{
+    "name": "reiji/haruproject.space",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "ReijiAkkerman",
+            "email": "reijiakkerman@gmail.com"
+        }
+    ],
+    "require": {}
+}
