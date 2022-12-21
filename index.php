@@ -40,22 +40,20 @@
         </aside>
         <section>
             <div id="english">
-                <p>
-                    <?php 
-                        for($i = 0; $i < $amount; $i++) {
-                            echo "$NW[$i]<br>";
-                        }
-                    ?>
-                </p>
-            </div>
-            <div id="russian">
-                <p>
                 <?php 
+                    if(isset($amount))
                     for($i = 0; $i < $amount; $i++) {
-                        echo "$TNW[$i]<br>";
+                        echo "<pre>$NW[$i]</pre>";
                     }
                 ?>
-                </p>
+            </div>
+            <div id="russian">
+                <?php 
+                    if(isset($amount))
+                    for($i = 0; $i < $amount; $i++) {
+                        echo "<pre>$TNW[$i]</pre>";
+                    }
+                ?>
             </div>
         </section>
         <script src="next.js"></script>
