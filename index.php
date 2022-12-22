@@ -1,7 +1,8 @@
 <?php
     $path = explode('/', $_SERVER['REQUEST_URI']);
     switch($path[1]) {
-        case 'read':
+        case 'sort':
+            exec('./a.out');
             $fd = fopen('NW.txt', 'r') or die('не удалось открыть файл NW.txt');
             $count = 0;
             while(!feof($fd)) {
@@ -19,9 +20,6 @@
             $amount = $count;
             $count = 0;
             break;
-        case 'sort':
-            exec('./a.out');
-            break;
     }
 ?>
 <!DOCTYPE html>
@@ -36,7 +34,6 @@
             <input type="file">
         </aside>
         <aside class="menu">
-            <a href="read"><div>READ</div></a>
             <a href="sort"><div>SORT</div></a>
             <button id="next" type="button">NEXT</button>
         </aside>
