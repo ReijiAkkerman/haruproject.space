@@ -32,11 +32,13 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <aside>
+        <aside class="download">
+            <input type="file">
+        </aside>
+        <aside class="menu">
             <a href="read"><div>READ</div></a>
             <a href="sort"><div>SORT</div></a>
             <button id="next" type="button">NEXT</button>
-            <button id="back" type="button">BACK</button>
         </aside>
         <section>
             <div id="english">

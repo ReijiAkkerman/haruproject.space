@@ -5,14 +5,21 @@
     text-decoration: none;
 }
 
-aside {
+.download {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.menu {
     display: block;
     position: fixed;
     bottom: 0;
     right: 0;
 }
 
-aside > button {
+aside button {
     display: block;
     position: relative;
     text-align: center;
