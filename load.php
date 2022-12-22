@@ -13,7 +13,7 @@
         <section>
         <form action="load" method="post" enctype="multipart/form-data">
             <input type="file" name="fileToUpload">
-            <button>Upload File</button>
+            <button name="submit" value="submit">Upload File</button>
         </form>
         </section>
     </body>

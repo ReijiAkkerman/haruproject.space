@@ -22,9 +22,11 @@
             include "sort.php";
             break;
         case 'load':
-            $target_dir = "/var/www/haruproject.space/";
-            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-            move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+            if(isset($_POST['submit'])) {
+                $target_dir = "./";
+                $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+            }
             include "load.php";
             break;
     }
