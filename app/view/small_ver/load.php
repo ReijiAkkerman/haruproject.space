@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/small_ver/style.css">
     </head>
     <body>
         <aside class="menu">
             <a href="sort"><div>SORT</div></a>
-            <a href="load"><div>LOAD</div></a>
+            <a href="main"><div>MAIN</div></a>
         </aside>
         <section>
         <form action="load" method="post" enctype="multipart/form-data">

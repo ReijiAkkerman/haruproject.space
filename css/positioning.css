@@ -1,0 +1,54 @@
+body {
+    display: block;
+    position: relative;
+}
+
+button {
+    display: block;
+    position: relative;
+}
+
+header {
+    display: block;
+    position: sticky;
+}
+
+header > ul {
+    display: flex;
+    justify-content: center;
+}
+
+.Contents {
+    display: block;
+    position: relative;
+}
+
+.w_ContentsBlock {
+    display: block;
+    position: relative;
+}
+
+.w_ContentsBlock::before {
+    display: block;
+    position: absolute;
+}
+
+.w_ContentsBlock::after {
+    display: block;
+    position: absolute;
+}
+
+.ContentsBlock {
+    display: block;
+    position: relative;
+}
+
+.ContentsBlock > * {
+    display: block;
+    position: relative;
+}
+
+.ContentsBlockField {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    color: #f00;
+    text-decoration: none;
+    text-align: center;
+    font-weight: normal;
+    font-variant: small-caps;
+    font-family: cyber;
+    letter-spacing: 2px;
+    list-style-type: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    background-image: url(../assets/images/bg.gif);
+}
+
+input {
+    border: none;
+    border-top: 1px #500 solid;
+    border-bottom: 1px #500 solid;
+    width: 250px;
+    background-color: #f002;
+}
+
+input:focus {
+    border-bottom: 1px #f00 solid;
+    border-top: 1px #f00 solid;
+    background-color: #f003;
+}
+
+button {
+    background-color: #f002;
+    border: none;
+    border-left: 1px #500 solid;
+    border-right: 1px #500 solid;
+    padding: 8px 15px;
+    margin: 15px auto;
+}
+
+button:hover, button:focus {
+    background-color: #f003;
+    border-left: 1px #f00 solid;
+    border-right: 1px #f00 solid;
+}
+
+header {
+    top: 0;
+    border-bottom: 1px #f00 solid;
+}
+
+header > ul {
+    margin: 0 auto;
+}
+
+header li {
+    margin: 0 10px;
+    padding: 15px 20px;
+    border-left: 1px #500 solid;
+    border-right: 1px #500 solid;
+}
+
+header li:hover {
+    border-left: 1px #f00 solid;
+    border-right: 1px #f00 solid;
+}
+
+h5 {
+    padding: 20px;
+}
+
+.Contents {
+    width: 700px;
+    margin: 80px auto;
+}
+
+.w_ContentsBlock {
+    padding: 25px 0;
+    margin: 25px 0;
+}
+
+.w_ContentsBlock::before {
+    content: "";
+    width: 700px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background-image: url(../assets/images/border.png);
+    transform: rotate(180deg);
+}
+
+.w_ContentsBlock::after {
+    content: "";
+    width: 700px;
+    height: 25px;
+    bottom: 0;
+    right: 0;
+    background-image: url(../assets/images/border.png);
+}
+
+.ContentsBlock {
+    border: 1px #500 solid;
+    background-color: #9001;
+}
+
+.ContentsBlockField {
+    width: 350px;
+    margin: 15px auto;
+}
