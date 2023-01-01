@@ -16,8 +16,8 @@
                             <h6>Пароль</h6>
                             <input type="text" name="password">
                         </div>
-                        <button id="login" type="button">Войти</button>
-                        <button id="registration" type="button">Зарегистрироваться</button>
+                        <button class="button" id="login" type="button">Войти</button>
+                        <button class="button" id="registration" type="button">Зарегистрироваться</button>
                     </form>
                 </div>
             </div>

@@ -10,6 +10,7 @@
     font-family: cyber;
     letter-spacing: 2px;
     list-style-type: none;
+    border: none;
 }
 
 *:focus {
@@ -18,6 +19,10 @@
 
 body {
     background-image: url(../assets/images/bg.gif);
+}
+
+body::-webkit-scrollbar {
+    width: 0;
 }
 
 input {
@@ -34,7 +39,7 @@ input:focus {
     background-color: #f003;
 }
 
-button {
+.button {
     background-color: #f002;
     border: none;
     border-left: 1px #500 solid;
@@ -43,31 +48,100 @@ button {
     margin: 15px auto;
 }
 
-button:hover, button:focus {
+.button:hover, .button:focus {
     background-color: #f003;
     border-left: 1px #f00 solid;
     border-right: 1px #f00 solid;
+    cursor: pointer;
 }
 
 header {
+    border-bottom: 1px #f00 solid;
+    background-color: #000;
+    top: -60px;
+    z-index: 1;
+}
+
+header:hover {
     top: 0;
+}
+
+header * {
+    font-size: 20px;
+    font-variant: normal;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 2px;
+    font-family: sao;
+}
+
+.Menu {
+    top: 100px;
+    right: 0;
+    border: 1px #0000 solid;
+}
+
+.Menu li {
+    padding: 10px 20px;
+    background-color: #0000;
+    border: 1px #000 solid;
+}
+
+.Menu li:hover {
+    background-color: #f002;
+    border: 1px #f00 solid;
+}
+
+.mainWindow {
+    width: 1025px;
+    background-color: #0000;
+    margin: 20px auto;
+}
+
+.Detailes {
+    width: 300px;
+    height: 698px;
+    background-color: #000;
+    border: 1px #f00 solid;
+}
+
+.DetailesToolbar {
+    width: 100%;
+    height: 40px;
     border-bottom: 1px #f00 solid;
 }
 
-header > ul {
-    margin: 0 auto;
+.DetailesToolbarItem {
+    background-color: #000;
+    padding: 0 5px;
+    border-left: 1px #000 solid;
+    border-right: 1px #000 solid;
 }
 
-header li {
-    margin: 0 10px;
-    padding: 15px 20px;
-    border-left: 1px #500 solid;
-    border-right: 1px #500 solid;
-}
-
-header li:hover {
+.DetailesToolbarItem:hover {
+    background-color: #f002;
     border-left: 1px #f00 solid;
     border-right: 1px #f00 solid;
+}
+
+.Calendar {
+    width: 700px;
+    height: 700px;
+    background-color: #000;
+    grid-template-columns: repeat(7, 1fr);
+    overflow: scroll;
+}
+
+.Calendar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.item {
+    height: 175px;
+    background-color: #000;
+    border: 1px #500 solid;
+    cursor: pointer;
 }
 
 h5 {

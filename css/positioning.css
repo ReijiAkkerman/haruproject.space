@@ -9,13 +9,36 @@ button {
 }
 
 header {
-    display: block;
+    display: flex;
+    justify-content: space-between;
     position: sticky;
 }
 
-header > ul {
+.Menu {
+    display: block;
+    position: fixed;
+}
+
+.mainWindow {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.Detailes {
+    display: block;
+    position: relative;
+}
+
+.DetailesToolbar {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.Calendar {
+    display: grid;
+    position: relative;
 }
 
 .Contents {
