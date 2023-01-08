@@ -42,7 +42,11 @@ aside div {
 }
 
 section {
-    margin: 20px;
+    margin-left: 20px;
+    overflow: auto;
+}
+
+main {
     overflow: auto;
 }
 

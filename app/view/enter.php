@@ -7,17 +7,17 @@
         <section class="Contents">
             <div class="w_ContentsBlock">
                 <div class="ContentsBlock">
-                    <form action="">
+                    <form action="scheduler" method="POST">
                         <div class="ContentsBlockField">
                             <h6>Логин</h6>
-                            <input type="text" name="login">
+                            <input type="text" name="login" autocomplete="off">
                         </div>
                         <div class="ContentsBlockField">
                             <h6>Пароль</h6>
-                            <input type="text" name="password">
+                            <input type="password" name="password" autocomplete="off">
                         </div>
-                        <button class="button" id="login" type="button">Войти</button>
-                        <button class="button" id="registration" type="button">Зарегистрироваться</button>
+                        <button class="button" id="login">Войти</button>
+                        <button class="button" id="registration">Зарегистрироваться</button>
                     </form>
                 </div>
             </div>

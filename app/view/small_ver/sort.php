@@ -29,6 +29,6 @@
                 ?>
             </div>
         </section>
-        <script src="next.js"></script>
+        <script src="js/next.js"></script>
     </body>
 </html>

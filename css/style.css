@@ -21,6 +21,12 @@ body {
     background-image: url(../assets/images/bg.gif);
 }
 
+svg {
+    width: 28px;
+    height: 28px;
+    fill: #f00;
+}
+
 body::-webkit-scrollbar {
     width: 0;
 }
@@ -57,7 +63,7 @@ input:focus {
 
 header {
     border-bottom: 1px #f00 solid;
-    background-color: #000;
+    background-color: #f001;
     top: -60px;
     z-index: 1;
 }
@@ -101,33 +107,45 @@ header * {
 .Detailes {
     width: 300px;
     height: 698px;
-    background-color: #000;
+    background-color: #f001;
     border: 1px #f00 solid;
 }
 
 .DetailesToolbar {
     width: 100%;
-    height: 40px;
-    border-bottom: 1px #f00 solid;
+    height: 50px;
+    margin-bottom: 10px;
 }
 
 .DetailesToolbarItem {
-    background-color: #000;
+    margin-top: 8px;
+    background-color: #0000;
     padding: 0 5px;
-    border-left: 1px #000 solid;
-    border-right: 1px #000 solid;
+    border-bottom: 1px #0000 solid;
+    cursor: pointer;
 }
 
 .DetailesToolbarItem:hover {
-    background-color: #f002;
-    border-left: 1px #f00 solid;
-    border-right: 1px #f00 solid;
+    border-bottom: 1px #f00 solid;
+}
+
+.b_CalendarBar {
+    width: 100%;
+    height: 26px;
+    background-color: #300;
+}
+
+.b_CalendarBar * {
+    font-family: sao;
+    font-size: 24px;
 }
 
 .Calendar {
     width: 700px;
-    height: 700px;
-    background-color: #000;
+    height: 672px;
+    background-color: #f000;
+    border-top: 1px #500 solid;
+    border-bottom: 1px #500 solid;
     grid-template-columns: repeat(7, 1fr);
     overflow: scroll;
 }
@@ -137,11 +155,61 @@ header * {
     height: 0;
 }
 
-.item {
-    height: 175px;
-    background-color: #000;
+.CalendarButton {
+    height: 168px;
+    width: 100px;
+    background-color: #f001;
     border: 1px #500 solid;
     cursor: pointer;
+}
+
+.CalendarButton_inactive {
+    height: 168px;
+    width: 100px;
+    background-color: #7772;
+    border: 1px #555 solid;
+    cursor: default;
+}
+
+.CalendarButton:hover {
+    background-color: #f001;
+    border-color: #f00;
+}
+
+.CalendarItem {
+    width: 100%;
+    height: 100%;
+}
+
+.CalendarItemDate {
+    top: 0;
+    width: 100%;
+    background-color: #300;
+}
+
+.CalendarItemDate_inactive {
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: #777;
+}
+
+.CalendarItemContents {
+    overflow: hidden;
+}
+
+.CalendarItemContents * {
+    font-family: sao;
+    font-variant: normal;
+    letter-spacing: 1px;
+    font-size: 20px;
+    background-color: #0af;
+    padding-left: 2px;
+    color: #fff;
+}
+
+#current_day {
+    background-color: #700;
 }
 
 h5 {

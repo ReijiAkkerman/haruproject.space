@@ -36,8 +36,28 @@ header {
     position: relative;
 }
 
+.b_CalendarBar {
+    display: flex;
+    justify-content: space-around;
+}
+
 .Calendar {
     display: grid;
+    position: relative;
+}
+
+.CalendarItem {
+    display: block;
+    position: relative;
+}
+
+.Date {
+    display: block;
+    position: relative;
+}
+
+.CalendarItemContents {
+    display: block;
     position: relative;
 }
 

@@ -8,13 +8,17 @@
     <body>
         <aside class="menu">
             <a href="sort"><div>SORT</div></a>
-            <a href="main"><div>MAIN</div></a>
+            <a href="scheduler"><div>MAIN</div></a>
         </aside>
-        <section>
-        <form action="load" method="post" enctype="multipart/form-data">
-            <input type="file" name="fileToUpload">
-            <button name="submit" value="submit">Upload File</button>
-        </form>
-        </section>
+        <main>
+            <h1><?php if(isset($error_load)) echo $error_load; if(isset($error_name)) echo "<br>$error_name" ?></h1>
+            <form action="load" method="post" enctype="multipart/form-data">
+                <h3>NW.txt</h3>
+                <input type="file" name="file1"><br>
+                <h3>TNW.txt</h3>
+                <input type="file" name="file2"><br><br><br>
+                <button name="submit" value="submit">Upload File</button>
+            </form>
+        </main>
     </body>
 </html>
