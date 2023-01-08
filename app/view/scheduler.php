@@ -29,7 +29,7 @@
             <div class="Detailes">
                 <div class="DetailesToolbar">
                     <button class="DetailesToolbarItem">
-                        <svg height="28px" width="20px" viewBox="0 0 29.237 29.237">
+                        <svg viewBox="0 0 29.237 29.237">
                             <path d="M7.685,24.819H8.28v-2.131h3.688v2.131h0.596v-2.131h3.862v2.131h0.597v-2.131h4.109v2.131h0.595
                                 v-2.131h3.417v-0.594h-3.417v-3.861h3.417v-0.596h-3.417v-3.519h3.417v-0.594h-3.417v-2.377h-0.595v2.377h-4.109v-2.377h-0.597
                                 v2.377h-3.862v-2.377h-0.596v2.377H8.279v-2.377H7.685v2.377H3.747v0.594h3.938v3.519H3.747v0.596h3.938v3.861H3.747v0.594h3.938
@@ -99,7 +99,10 @@
                                     $day++
                                 ?></div>
                                 <div class="CalendarItemContents">
-                                    <pre>SOME TEXT</pre>
+                                    <div class="CalendarItemContentsBlock">
+                                        <pre>Некоторый текст</pre>
+                                        <p class="invisible">много много текста</p>
+                                    </div>
                                 </div>
                             </div>
                     </button>
