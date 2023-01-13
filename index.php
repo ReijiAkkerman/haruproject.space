@@ -1,5 +1,9 @@
 <?php
     require_once "app/control/calendar.php";
+    require_once "app/core/auth.php";
+
+    // $path = [];
+    // $path[1] = 'xhr';
 
     $path = explode('/', $_SERVER['REQUEST_URI']);
     switch($path[1]) {
@@ -7,6 +11,7 @@
             include "app/view/enter.php";
             break;
         case 'scheduler':
+            // include "app/view/test.php";
             include "app/view/scheduler.php";
             break;
         case 'sort':
@@ -55,6 +60,20 @@
                 }
             }
             include "app/view/small_ver/load.php";
+            break;
+        case 'registration':
+            if(isset($_POST['login']))
+                $login = $_POST['login'];
+            if(isset($_POST['password']))
+                $password = $_POST['password'];
+            if(isset($login) && isset($password)) $validation = _registration($login, $password);
+            if($validation) header("Location: scheduler");
+            else header("Location: error");
+            break;
+        case 'login':
+            break;
+        case 'error':
+            include "app/view/error.php";
             break;
     }
 ?>

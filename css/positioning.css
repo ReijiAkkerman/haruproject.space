@@ -14,10 +14,6 @@ header {
     position: sticky;
 }
 
-.invisible {
-    display: none;
-}
-
 .Menu {
     display: block;
     position: fixed;

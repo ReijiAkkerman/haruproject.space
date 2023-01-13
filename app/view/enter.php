@@ -4,10 +4,10 @@
         <?php require_once "often/head.php" ?>
     </head>
     <body>
-        <section class="Contents">
+        <main class="Contents">
             <div class="w_ContentsBlock">
                 <div class="ContentsBlock">
-                    <form action="scheduler" method="POST">
+                    <form action="" method="POST">
                         <div class="ContentsBlockField">
                             <h6>Логин</h6>
                             <input type="text" name="login" autocomplete="off">
@@ -16,8 +16,8 @@
                             <h6>Пароль</h6>
                             <input type="password" name="password" autocomplete="off">
                         </div>
-                        <button class="button" id="login">Войти</button>
-                        <button class="button" id="registration">Зарегистрироваться</button>
+                        <button class="button" id="login" onclick="_changeAction(this.id);">Войти</button>
+                        <button class="button" id="registration" onclick="_changeAction(this.id);">Зарегистрироваться</button>
                     </form>
                 </div>
             </div>
@@ -26,6 +26,7 @@
                     <h5>Зарегистрируйтесь или войдите,<br>чтобы получить доступ к ресурсам проекта </h5>
                 </div>
             </div>
-        </section>
+        </main>
+        <script src="js/enter_buttons.js"></script>
     </body>
 </html>
