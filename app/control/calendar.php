@@ -11,7 +11,10 @@
 
     $active_month = 2;                                  // количество активных месяцев для отображения
     $target_year = $current_year;                       // год окончания календаря
-    $target_month = $current_month;
+    $target_month = $current_month;                     // месяц окончания календаря
+
+    for($i = 0; $i < 12; $i++) 
+        $target_month_array = (int)date('t', mktime(1, 1, 1, $i + 1, 1, $target_year));
 
     if(($current_month + $active_month) > 12) {
         $target_year++;

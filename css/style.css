@@ -27,6 +27,17 @@ svg {
     fill: #f00;
 }
 
+option, select {
+    background-color: #500;
+    border: none;
+    outline: none;
+}
+
+option:focus, select:active {
+    border: none;
+    outline: none;
+}
+
 body::-webkit-scrollbar {
     width: 0;
 }
@@ -127,6 +138,19 @@ header * {
 
 .DetailesToolbarItem:hover {
     border-bottom: 1px #f00 solid;
+}
+
+.DetailesSettings {
+    border: 1px #0f0 solid;
+}
+
+.DetailesSettings * {
+    font-family: sao;
+    font-size: 20px;
+}
+
+.DetailesSettingsDate > * {
+    border: 1px #f00 solid;
 }
 
 .b_CalendarBar {

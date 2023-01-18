@@ -36,6 +36,22 @@ header {
     position: relative;
 }
 
+.DetailesSettings {
+    display: block;
+    position: relative;
+}
+
+.DetailesSettingsDate {
+    display: block;
+    position: relative;
+}
+
+.DetailesSettingsDate > * {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
 .b_CalendarBar {
     display: flex;
     justify-content: space-around;
