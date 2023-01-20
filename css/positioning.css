@@ -46,9 +46,19 @@ header {
     position: relative;
 }
 
-.DetailesSettingsDate > * {
+.DetailesSettingsDateItem {
     display: flex;
     justify-content: space-around;
+    position: relative;
+}
+
+.DetailesSettingsDateItem_block {
+    display: block;
+    position: relative;
+}
+
+.date_area {
+    display: block;
     position: relative;
 }
 

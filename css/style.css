@@ -47,6 +47,7 @@ input {
     border-top: 1px #500 solid;
     border-bottom: 1px #500 solid;
     width: 250px;
+    padding-top: 3px;
     background-color: #f002;
 }
 
@@ -101,7 +102,7 @@ header * {
 .Menu li {
     padding: 10px 20px;
     background-color: #0000;
-    border: 1px #000 solid;
+    border: 1px #0000 solid;
 }
 
 .Menu li:hover {
@@ -141,7 +142,7 @@ header * {
 }
 
 .DetailesSettings {
-    border: 1px #0f0 solid;
+    border-top: 1px #f00 solid;
 }
 
 .DetailesSettings * {
@@ -149,7 +150,32 @@ header * {
     font-size: 20px;
 }
 
-.DetailesSettingsDate > * {
+.DetailesSettingsDate {
+    border-bottom: 1px #f00 solid;
+}
+
+.DetailesSettingsDateItem {
+    padding: 0 0 10px 0;
+    border-bottom: 1px #700 solid;
+}
+
+.DetailesSettingsDateItem_block__input {
+    width: 90px;
+}
+
+.calendar_label {
+    font-size: 25px;
+    padding: 5px ;
+}
+
+.date_button {
+    margin: 5px auto;
+    padding: 3px 9px 0 10px;
+    border: 1px #0000 solid;
+    background-color: #f002;
+}
+
+.date_button:hover, .date_button:focus {
     border: 1px #f00 solid;
 }
 
