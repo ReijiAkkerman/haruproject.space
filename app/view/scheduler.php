@@ -17,7 +17,7 @@
                 <li>Английский язык</li>
             </ul>
             <ul class="commonSkills">
-                <li><?= var_dump($_POST['day_end']) ?></li>
+                <li><?= var_dump($day_end) ?></li>
             </ul>
         </header>
         <nav class="Menu">
@@ -91,13 +91,13 @@
                             <div class="DetailesSettingsDateItem_block">
                                 <label for="year">Год</label>
                                 <ul>
-                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="year_end" value="<?= $target_year ?>"></li>
+                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="year_end" value="<?= $current_year ?>"></li>
                                 </ul>
                             </div>
                             <div class="DetailesSettingsDateItem_block">
                                 <label for="month">Месяц</label>
                                 <ul>
-                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="month_end" value="<?= $target_month ?>"></li>
+                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="month_end" value="<?= $current_month ?>"></li>
                                 </ul>
                             </div>
                             <div class="DetailesSettingsDateItem_block">
@@ -123,61 +123,82 @@
                 </div>
                 <div class="Calendar">
                     <?php for($i = 0; $i < $inactive_days_before; $i++) { ?>
-                        <button class="CalendarButton_inactive">
-                            <div class="CalendarItem">
-                                <div class="CalendarItemDate_inactive">N/A</div>
-                                <div class="CalendarItemContents"></div>
-                            </div>
-                        </button>
-                    <?php 
-                        } 
-                        $temp_year = $year_start;
-                        $temp_month = $month_start;
-                        for($i = 0; $i < $active_days; $i++) { 
-                            if($i == 0) {
-                                $year_label = (int)date('L', mktime(1, 1, 1, $temp_month, 1, $temp_year));
-                                for($i = 0; $i < 12; $i++)
-                                    $temp_months_array[$i] = (int)date('t', mktime(1, 1, 1, $i + 1, 1, $year_start));
-                            }
-                            if($day > $temp_months_array[$month - 1]) {
-                                $day = 1;
-                                $month++;
-                            }
-                            if($month > 12) {
-                                $month = 1;
-                                $temp_year++;
-                            }
-                    ?>
-                        <button class="CalendarButton" onclick="_selected(this.id)" id="<?= $day . '_' . $month ?>">
-                            <div class="CalendarItem">
-                                <div class="CalendarItemDate" <?php if($i == 0) echo 'id="current_day"' ?>><?php
-                                    if($day == 1)
-                                        echo "$day/$month";
-                                    else
-                                        echo $day;
-                                    $day++
-                                ?></div>
-                                <div class="CalendarItemContents">
-                                    <div class="CalendarItemContentsBlock">
-                                        <pre>Некоторый текст</pre>
-                                    </div>
-                                </div>
-                            </div>
+                    <button class="CalendarButton_inactive">
+                        <div class="CalendarItem">
+                            <div class="CalendarItemDate_inactive">N/A</div>
+                            <div class="CalendarItemContents"></div>
+                        </div>
                     </button>
                     <?php } ?>
-                    <?php for($i = 0; $i < $inactive_days_after; $i++) { ?>
-                        <button class="CalendarButton_inactive">
-                            <div class="CalendarItem">
-                                <div class="CalendarItemDate_inactive">N/A</div>
-                                <div class="CalendarItemContents"></div>
+                    <?php
+                    $temp_year = $year_start;
+                    $temp_month = $month_start;
+                    $temp_day = $day_start;
+                    for($i = 0; $i < $active_days; $i++) {
+                        $year_label = (int)date('L', mktime(1, 1, 1, $temp_month, $temp_day, $temp_year));
+                        if($year_label) {
+                            if($temp_day > $months_of_leap_year[$temp_month - 1]) {
+                                $temp_day = 1;
+                                $temp_month++;
+                            }
+                            if($temp_month > 12) {
+                                $temp_month = 1;
+                                $temp_year++;
+                            }
+                        }
+                        else {
+                            if($temp_day > $months_of_normal_year[$temp_month - 1]) {
+                                $temp_day = 1;
+                                $temp_month++;
+                            }
+                            if($temp_month > 12) {
+                                $temp_month = 1;
+                                $temp_year++;
+                            }
+                        }
+                    ?>
+                    <button class="CalendarButton" onclick="_selected(this.id)" id="<?= $temp_day . '_' . $temp_month ?>">
+                        <div class="CalendarItem">
+                            <div class="CalendarItemDate" <?php if($i == 0) echo 'id="current_day"' ?>><?php
+                                if($temp_day == 1)
+                                    echo "$temp_day/$temp_month";
+                                else
+                                    echo $temp_day;
+                            ?></div>
+                            <div class="CalendarItemContents">
+                                <div class="CalendarItemContentsBlock">
+                                    <pre>Некоторый текст</pre>
+                                </div>
                             </div>
+                        </div>
+                    </button>
+                    <?php
+                    $temp_day++;
+                    }
+                    ?>
+                    <?php for($i = 0; $i < $inactive_days_after; $i++) { ?>
+                    <button class="CalendarButton_inactive">
+                        <div class="CalendarItem">
+                            <div class="CalendarItemDate_inactive">N/A</div>
+                            <div class="CalendarItemContents"></div>
+                        </div>
                     </button>
                     <?php } ?>
                 </div>
             </section>
         </main>
         <footer>
-
+            <?=
+            var_dump($year_start);
+            var_dump($month_start);
+            var_dump($day_start);
+            var_dump($year_end);
+            var_dump($month_end);
+            var_dump($day_end);
+            var_dump($_POST['year_end']);
+            var_dump($_POST['month_end']);
+            var_dump($_POST['day_end']);
+            ?>
         </footer>
         <script src="js/xhr.js"></script>
         <script src="js/mouse.js"></script>

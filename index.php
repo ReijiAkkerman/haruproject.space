@@ -18,7 +18,7 @@
             include "app/view/enter.php";
             break;
         case 'scheduler':
-            calendar_target();
+            calendar_default();
             if(isset($_COOKIE['id']))
                 $id = $_COOKIE['id'];
             // if(isset($id) && ($id != null && $id != false))
