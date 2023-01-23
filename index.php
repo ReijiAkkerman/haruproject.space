@@ -2,14 +2,14 @@
     require_once "app/core/calendar.php";
     require_once "app/core/auth.php";
 
-    $path = [];
-    $path[1] = 'scheduler';
+    // $path = [];
+    // $path[1] = 'scheduler';
     // $login = 'ReijiAkkermannn';
     // $password = 'Yasuraokahanabi3';
     // $id = '1';
     // $validation = 1;
 
-    // $path = explode('/', $_SERVER['REQUEST_URI']);
+    $path = explode('/', $_SERVER['REQUEST_URI']);
     switch($path[1]) {
         case '':
             if(isset($_COOKIE['id']))
@@ -19,11 +19,12 @@
             break;
         case 'scheduler':
             calendar_default();
+
             if(isset($_COOKIE['id']))
                 $id = $_COOKIE['id'];
-            // if(isset($id) && ($id != null && $id != false))
+            if(isset($id) && ($id != null && $id != false))
                 include "app/view/scheduler.php";
-            // else header("Location: error");
+            else header("Location: error");
         break;
         case 'sort':
             exec('./a.out');
@@ -138,6 +139,10 @@
             break;
         case 'error':
             include "app/view/error.php";
+            break;
+        case 'quit':
+            _unset_all_cookies();
+            header("Location: /");
             break;
     }
 ?>

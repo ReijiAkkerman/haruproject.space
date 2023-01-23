@@ -86,3 +86,7 @@
         }
         return false;
     }
+
+    function _unset_all_cookies() {
+        setcookie('id', '', time() - 3600);
+    }

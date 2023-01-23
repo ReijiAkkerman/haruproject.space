@@ -17,12 +17,13 @@
                 <li>Английский язык</li>
             </ul>
             <ul class="commonSkills">
-                <li><?= var_dump($day_end) ?></li>
+                <li></li>
             </ul>
         </header>
         <nav class="Menu">
             <ul>
                 <a href="sort"><li>Английский язык</li></a>
+                <a href="quit"><li>Выйти</li></a>
             </ul>
         </nav>
         <main class="mainWindow">
@@ -64,25 +65,25 @@
                     </button>
                 </div>
                 <div class="DetailesSettings">
-                    <form action="date" method="POST" class="DetailesSettingsDate">
+                    <form action="scheduler" method="POST" class="DetailesSettingsDate">
                         <h5 class="calendar_label">Начало</h5>
                         <div class="DetailesSettingsDateItem">
                             <div class="DetailesSettingsDateItem_block">
                                 <label for="year">Год</label>
                                 <ul>
-                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="year_start" value="<?= $current_year ?>"></li>
+                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="year_start" value="<?= $year_start ?>"></li>
                                 </ul>
                             </div>
                             <div class="DetailesSettingsDateItem_block">
                                 <label for="month">Месяц</label>
                                 <ul>
-                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="month_start" value="<?= $current_month ?>"></li>
+                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="month_start" value="<?= $month_start ?>"></li>
                                 </ul>
                             </div>
                             <div class="DetailesSettingsDateItem_block">
                                 <label for="day">День</label>
                                 <ul>
-                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="day_start" value="<?= $current_day ?>"></li>
+                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="day_start" value="<?= $day_start ?>"></li>
                                 </ul>
                             </div>
                         </div>
@@ -91,19 +92,19 @@
                             <div class="DetailesSettingsDateItem_block">
                                 <label for="year">Год</label>
                                 <ul>
-                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="year_end" value="<?= $current_year ?>"></li>
+                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="year_end" value="<?= $year_end ?>"></li>
                                 </ul>
                             </div>
                             <div class="DetailesSettingsDateItem_block">
                                 <label for="month">Месяц</label>
                                 <ul>
-                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="month_end" value="<?= $current_month ?>"></li>
+                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="month_end" value="<?= $month_end ?>"></li>
                                 </ul>
                             </div>
                             <div class="DetailesSettingsDateItem_block">
                                 <label for="day">День</label>
                                 <ul>
-                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="day_end" value=""></li>
+                                    <li><input type="text" class="DetailesSettingsDateItem_block__input" name="day_end" value="<?= $day_end ?>"></li>
                                 </ul>
                             </div>
                         </div>
@@ -159,8 +160,15 @@
                     ?>
                     <button class="CalendarButton" onclick="_selected(this.id)" id="<?= $temp_day . '_' . $temp_month ?>">
                         <div class="CalendarItem">
-                            <div class="CalendarItemDate" <?php if($i == 0) echo 'id="current_day"' ?>><?php
-                                if($temp_day == 1)
+                            <div class="CalendarItemDate" 
+                            <?php
+                                if(($temp_year == $current_year) && ($temp_month == $current_month) && ($temp_day == $current_day)) echo 'id="current_day"' 
+                            ?>
+                            >
+                            <?php
+                                if(($temp_month == 1) && ($temp_day == 1))
+                                    echo "$temp_day/$temp_month/$temp_year";
+                                else if(($temp_day == 1) && ($temp_month != 1))
                                     echo "$temp_day/$temp_month";
                                 else
                                     echo $temp_day;
@@ -188,17 +196,7 @@
             </section>
         </main>
         <footer>
-            <?=
-            var_dump($year_start);
-            var_dump($month_start);
-            var_dump($day_start);
-            var_dump($year_end);
-            var_dump($month_end);
-            var_dump($day_end);
-            var_dump($_POST['year_end']);
-            var_dump($_POST['month_end']);
-            var_dump($_POST['day_end']);
-            ?>
+
         </footer>
         <script src="js/xhr.js"></script>
         <script src="js/mouse.js"></script>

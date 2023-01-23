@@ -40,27 +40,28 @@
             $day_start = (int)$_POST['day_start'];
         else
             $day_start = (int)date('j', time());
-        if(isset($_POST['year_end'])) {
+        if(isset($_POST['year_end'])) 
             $year_end = (int)$_POST['year_end'];
-        }
-        else
+        else {
             $year_end = (int)date('o', time());
-        if(isset($_POST['month_end'])) {
-            $month_end = (int)$_POST['month_end'];
         }
-        else
-            $month_end = (int)date('n', time());
+        if(isset($_POST['month_end'])) 
+            $month_end = (int)$_POST['month_end'];
+        else {
+            $m_e = (int)date('n', time());
+            $m_e += 2;
+            if($m_e > 12) {
+                $month_end = $m_e % 12;
+                $year_end++;
+            }
+            else
+                $month_end = $m_e;
+        }
         if(isset($_POST['day_end']))
             $day_end = (int)$_POST['day_end'];
-        
-        // $year_start = (int)$year_start;
-        // $month_start = (int)$month_start;
-        // $day_start = (int)$day_start;
-        // $year_end = (int)$year_end;
-        // $month_end = (int)$month_end;
-        // $day_end = (int)$day_end;
-
-        // $day_end = 30;
+        else {
+            $day_end = (int)date('t', mktime(1, 1, 1, $month_end, 1, $year_end));
+        }
         
         global $current_year;
         global $current_month;
@@ -104,7 +105,7 @@
             $active_days += ($day_end - $day_start + 1);
             else {
                 if(($temp_year == $year_start) && ($temp_month == $month_start))
-                $active_days += ((int)date('t', mktime(1, 1, 1, $month_start, 1, $year_start)) - $day_start + 1);
+                    $active_days += ((int)date('t', mktime(1, 1, 1, $month_start, 1, $year_start)) - $day_start + 1);
                 else if(($temp_year == $year_end) && ($temp_month == $month_end))
                     $active_days += $day_end;
                 else {
