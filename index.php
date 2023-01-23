@@ -28,7 +28,12 @@
         break;
         case 'sort':
             exec('./a.out');
-            $fd = fopen('NW.txt', 'r') or $error_exec = 'не удалось открыть файл NW.txt';
+            try {
+                $fd = fopen('NW.txt', 'r');
+            }
+            catch(Throwable) {
+                $error_exec = 'не удалось открыть файл NW.txt';
+            }
             if(isset($error_exec)) {
                 include "app/view/small_ver/error_sort.php";
                 break;
@@ -40,7 +45,12 @@
             }
             fclose($fd);
             $count = 0;
-            $fd = fopen('TNW.txt', 'r') or $error_exec = 'не удалось открыть файл TNW.txt';
+            try {
+                $fd = fopen('TNW.txt', 'r');
+            }
+            catch(throwable) {
+                $error_exec = 'не удалось открыть файл TNW.txt';
+            }
             if(isset($error_exec)) {
                 include "app/view/small_ver/error_sort.php";
                 break;
