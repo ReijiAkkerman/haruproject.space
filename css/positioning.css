@@ -19,6 +19,10 @@ header {
     position: fixed;
 }
 
+.Menu_mobile {
+    display: none;
+}
+
 .mainWindow {
     display: flex;
     justify-content: space-between;
