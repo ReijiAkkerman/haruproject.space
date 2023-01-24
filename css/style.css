@@ -207,7 +207,7 @@ header * {
 
 .CalendarButton {
     height: 168px;
-    /* width: 100px; */
+    width: 100px;
     background-color: #f001;
     border: 1px #500 solid;
     cursor: pointer;
@@ -215,7 +215,7 @@ header * {
 
 .CalendarButton_inactive {
     height: 168px;
-    /* width: 100px; */
+    width: 100px;
     background-color: #7772;
     border: 1px #555 solid;
     cursor: default;

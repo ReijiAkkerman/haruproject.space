@@ -10,11 +10,15 @@
     }
 
     .CalendarButton {
+        width: unset;
         overflow: auto;
+        height: 120px;
     }
 
     .CalendarButton_inactive {
+        width: unset;
         overflow: auto;
+        height: 120px;
     }
 
     .b_CalendarBar {
