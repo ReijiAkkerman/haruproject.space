@@ -2,6 +2,7 @@
 <html>
     <head>
         <?php require_once "often/head.php" ?>
+        <title>Вход</title>
     </head>
     <body>
         <main class="Contents">

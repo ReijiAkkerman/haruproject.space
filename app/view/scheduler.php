@@ -2,6 +2,7 @@
 <html>
     <head>
         <?php require_once "often/head.php" ?>
+        <title>Планировщик</title>
     </head>
     <body>
         <header>

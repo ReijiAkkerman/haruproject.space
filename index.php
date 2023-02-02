@@ -19,7 +19,6 @@
             break;
         case 'scheduler':
             calendar_default();
-
             if(isset($_COOKIE['id']))
                 $id = $_COOKIE['id'];
             if(isset($id) && ($id != null && $id != false))
@@ -34,6 +33,8 @@
             catch(Throwable) {
                 $error_exec = 'не удалось открыть файл NW.txt';
             }
+            if($fd == false) 
+                $error_exec = 'не удалось открыть файл NW.txt';
             if(isset($error_exec)) {
                 include "app/view/small_ver/error_sort.php";
                 break;
@@ -51,6 +52,8 @@
             catch(throwable) {
                 $error_exec = 'не удалось открыть файл TNW.txt';
             }
+            if($fd == false) 
+                $error_exec = 'не удалось открыть файл TNW.txt';
             if(isset($error_exec)) {
                 include "app/view/small_ver/error_sort.php";
                 break;
