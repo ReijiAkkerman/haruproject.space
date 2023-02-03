@@ -42,6 +42,8 @@ body::-webkit-scrollbar {
     width: 0;
 }
 
+
+
 input {
     border: none;
     border-top: 1px #500 solid;
@@ -55,6 +57,37 @@ input:focus {
     border-bottom: 1px #f00 solid;
     border-top: 1px #f00 solid;
     background-color: #f003;
+}
+
+.checkbox {
+    width: 20px;
+}
+
+.checkbox:checked {
+    accent-color: #f00;
+}
+
+.description {
+    border: none;
+    border-top: 1px #500 solid;
+    border-bottom: 1px #500 solid;
+    width: 250px;
+    height: 150px;
+    padding-top: 3px;
+    background-color: #f002;
+    resize: none;
+    overflow-y: auto;
+    overflow-x: none;
+}
+
+.description:focus {
+    border-bottom: 1px #f00 solid;
+    border-top: 1px #f00 solid;
+    background-color: #f003;
+}
+
+.description::-webkit-scrollbar {
+    width: 0;
 }
 
 .button {
@@ -161,6 +194,30 @@ header * {
 
 .DetailesSettingsDateItem_block__input {
     width: 90px;
+}
+
+.DetailesAdd {
+    border-top: 1px #f00 solid;
+}
+
+.DetailesAdd * {
+    font-family: sao;
+}
+
+.DetailesAdd_block {
+    margin-top: 3px;
+}
+
+.DetailesAddContents {
+    border-bottom: 1px #500 solid;
+}
+
+.DetailesAddTimeItem_block__input {
+    width: 90px;
+}
+
+.DetailesAddTimeItem_block > * {
+    font-size: 20px;
 }
 
 .calendar_label {

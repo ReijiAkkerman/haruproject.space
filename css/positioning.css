@@ -61,6 +61,47 @@ header {
     position: relative;
 }
 
+.DetailesAdd {
+    display: none;
+    position: relative;
+}
+
+.DetailesAddContents {
+    display: block;
+    position: relative;
+}
+
+.DetailesAdd_block {
+    display: block;
+    position: relative;
+}
+
+.DetailesAddTime {
+    display: block;
+    position: relative;
+}
+
+.DetailesAddTimeItem_date, .DetailesAddTimeItem_time {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.DetailesAddTime_block {
+    display: block;
+    position: relative;
+}
+
+.DetailesAddTimeItem_block {
+    display: block;
+    position: relative;
+}
+
+.DetailesAddTimeItem_block > * {
+    display: block;
+    position: relative;
+}
+
 .date_area {
     display: block;
     position: relative;

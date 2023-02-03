@@ -9,6 +9,8 @@
     $current_year;
     $current_month;
     $current_day;
+    $current_hour;
+    $current_minute;
     
     $active_year;
     $active_month;
@@ -66,6 +68,8 @@
         global $current_year;
         global $current_month;
         global $current_day;
+        global $current_hour;
+        global $current_minute;
         
         global $active_year;
         global $active_month;
@@ -94,6 +98,9 @@
         
         $inactive_days_before = (int)date('w', mktime(1, 1, 1, $month_start, $day_start, $year_start));
         $inactive_days_after = (6 - (int)date('w', mktime(1, 1, 1, $month_end, $day_end, $year_end)));
+
+        $current_hour = (int)date('G', time());
+        $current_minute = (int)date('i', time());
         
         for($i = 0; $i <= $active_month; $i++) {
             if($temp_month > 12) {
