@@ -161,15 +161,15 @@
                             <div class="DetailesAddTimeItem_date">
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="year">Год</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="year_end" value="<?= $current_year ?>">
+                                    <input type="text" class="DetailesAddTimeItem_block__input" id="year_end" value="<?= $current_year ?>" readonly>
                                 </div>
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="month">Месяц</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="month_end" value="<?= $current_month ?>">
+                                    <input type="text" class="DetailesAddTimeItem_block__input" id="month_end" value="<?= $current_month ?>" readonly>
                                 </div>
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="day">День</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="day_end" value="<?= $current_day ?>">
+                                    <input type="text" class="DetailesAddTimeItem_block__input" id="day_end" value="<?= $current_day ?>" readonly>
                                 </div>
                             </div>
                             <div class="DetailesAddTimeItem_time">
