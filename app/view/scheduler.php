@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php require_once "often/head.php" ?>
         <title>Планировщик</title>
     </head>
@@ -147,7 +148,7 @@
                                     <input type="text" class="DetailesAddTimeItem_block__input" id="day_start" value="<?= $current_day ?>">
                                 </div>
                             </div>
-                            <div class="DetailesAddTimeItem_time">
+                            <div class="DetailesAddTimeItem_time" id="time_start">
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="hour">Час</label>
                                     <input type="text" class="DetailesAddTimeItem_block__input" id="hour_start" value="<?= $current_hour ?>">
@@ -172,7 +173,7 @@
                                     <input type="text" class="DetailesAddTimeItem_block__input" id="day_end" value="<?= $current_day ?>" readonly>
                                 </div>
                             </div>
-                            <div class="DetailesAddTimeItem_time">
+                            <div class="DetailesAddTimeItem_time" id="time_end">
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="hour">Час</label>
                                     <input type="text" class="DetailesAddTimeItem_block__input" id="hour_end" value="<?= $current_hour ?>">

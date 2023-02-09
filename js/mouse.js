@@ -1,7 +1,7 @@
 var selected;
 function _selected(Id) {
     {
-        array = document.querySelectorAll('.CalendarButton');
+        let array = document.querySelectorAll('.CalendarButton');
         array.forEach(b => b.style.borderColor = "#500");
         array.forEach(c => c.style.backgroundColor = "#f001");
         document.getElementById(Id).style.borderColor = '#f00';
@@ -34,7 +34,7 @@ function _selected(Id) {
     }
 }
 document.addEventListener("DOMContentLoaded", () => {
-    array = document.querySelectorAll('.CalendarButton');
+    let array = document.querySelectorAll('.CalendarButton');
     array.forEach((id) => {
         id.addEventListener("mouseover", () => {
             if(id.id != selected)
@@ -46,5 +46,23 @@ document.addEventListener("DOMContentLoaded", () => {
             if(id.id != selected)
             id.style.backgroundColor = "#f001";
         });
+    });
+    let time_array = ['#time_start', '#time_end'];
+    for(let i = 0; i < 2; i++) 
+        time_array[i] = document.querySelector(time_array[i]);
+    let checkbox = document.querySelector('.checkbox');
+    if(checkbox.checked == true)
+        for(let i = 0; i < 2; i++)
+            time_array[i].style.display = "none";
+    else
+        for(let i = 0; i < 2; i++)
+            time_array[i].style.display = "flex";
+    checkbox.addEventListener("click",  () => {
+        if(checkbox.checked == true)
+            for(let i = 0; i < 2; i++)
+                time_array[i].style.display = "none";
+        else
+            for(let i = 0; i < 2; i++)
+                time_array[i].style.display = "flex";
     });
 });
