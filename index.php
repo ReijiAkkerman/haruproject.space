@@ -2,6 +2,8 @@
     require_once "app/core/calendar.php";
     require_once "app/core/auth.php";
 
+
+
     $path = explode('/', $_SERVER['REQUEST_URI']);
     switch($path[1]) {
         case '':
@@ -150,7 +152,41 @@
             header("Location: /");
             break;
         case 'handle':
+            if($_POST['header'])
+                $header = $_POST['header'];
+            if($_POST['description'])
+                $description = $_POST['description'];
+            if($_POST['checkbox'])
+                $checkbox = $_POST['checkbox'];
+            if($checkbox == 'on') $checkbox = 1;
+            else $checkbox = 0;
+            if($_POST['hour_start'])
+                $hour_start = $_POST['hour_start'];
+            if($_POST['minute_start'])
+                $minute_start = $_POST['minute_start'];
+            if($_POST['hour_end'])
+                $hour_end = $_POST['hour_end'];
+            if($_POST['minute_end'])
+                $minute_end = $_POST['minuet_end'];
+            if($_POST['year_start'])
+                $year_start = $_POST['year_start'];
+            if($_POST['month_start'])
+                $month_start = $_POST['month_start'];
+            if($_POST['day_start'])
+                $day_start = $_POST['day_start'];
+            if($_POST['year_end'])
+                $year_end = $_POST['year_end'];
+            if($_POST['month_end'])
+                $month_end = $_POST['month_end'];
+            if($_POST['day_end'])
+                $day_end = $_POST['day_end'];
+
+            $start_timelabel = (string)mktime($hour_start, $minute_start, 0, $month_start, $day_start, $year_start);
+            $end_timelabel = (string)mktime($hour_start, $minute_start, 0, $month_start, $day_start, $year_start);
+            $creation_timelabel = (string)time();
+            _add_entry($header, $description, $start_timelabel, $end_timelabel, $creation_timelabel, $checkbox);
+            break;
+        case 'test':
             echo "hello";
             break;
     }
-?>

@@ -127,3 +127,9 @@
             $temp_month++;
         }
     }
+
+    function _add_entry($header, $description, $start_timelabel, $end_timelabel, $creation_timelabel, $checkbox):bool {
+        $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
+        mysqli_query($connection, "INSERT INTO ReijiAkkerman_calendar (header, content, start_timelabel, end_timelabel, creation_timelabel, done, during_day) VALUES ('$header', '$description', '$start_timelabel', '$end_timelabel', '$creation_timelabel', 0, $checkbox)");
+        mysqli_close($connection);
+    }

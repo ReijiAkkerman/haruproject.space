@@ -107,6 +107,17 @@ header {
     position: relative;
 }
 
+.DetailesCalendar {
+    display: block;
+    position: relative;
+}
+
+.DetailesCalendarDate {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
 .b_CalendarBar {
     display: flex;
     justify-content: space-around;

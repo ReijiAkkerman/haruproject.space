@@ -67,7 +67,7 @@ input:focus {
     accent-color: #f00;
 }
 
-.description {
+#add_description {
     border: none;
     border-top: 1px #500 solid;
     border-bottom: 1px #500 solid;
@@ -80,13 +80,13 @@ input:focus {
     overflow-x: none;
 }
 
-.description:focus {
+#add_description:focus {
     border-bottom: 1px #f00 solid;
     border-top: 1px #f00 solid;
     background-color: #f003;
 }
 
-.description::-webkit-scrollbar {
+#add_description::-webkit-scrollbar {
     width: 0;
 }
 
@@ -104,6 +104,10 @@ input:focus {
     border-left: 1px #f00 solid;
     border-right: 1px #f00 solid;
     cursor: pointer;
+}
+
+#to_main {
+    width: 124px;
 }
 
 header {
@@ -234,6 +238,10 @@ header * {
 
 .date_button:hover, .date_button:focus {
     border: 1px #f00 solid;
+}
+
+.DetailesCalendar {
+    border-top: 1px #f00 solid;
 }
 
 .b_CalendarBar {

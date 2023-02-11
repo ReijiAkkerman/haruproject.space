@@ -28,13 +28,12 @@
                 <a href="sort"><li>Английский язык</li></a>
                 <?php } ?>
                 <a href="quit"><li>Выйти</li></a>
-                <!-- <button onclick="_get_request()">handle</button> -->
             </ul>
         </nav>
         <main class="mainWindow">
             <section class="Detailes">
                 <div class="DetailesToolbar">
-                    <button class="DetailesToolbarItem">
+                    <button class="DetailesToolbarItem" onclick="_day_contents()">
                         <svg viewBox="0 0 29.237 29.237">
                             <path d="M7.685,24.819H8.28v-2.131h3.688v2.131h0.596v-2.131h3.862v2.131h0.597v-2.131h4.109v2.131h0.595
                                 v-2.131h3.417v-0.594h-3.417v-3.861h3.417v-0.596h-3.417v-3.519h3.417v-0.594h-3.417v-2.377h-0.595v2.377h-4.109v-2.377h-0.597
@@ -117,75 +116,80 @@
                     </form>
                 </div>
                 <div class="DetailesAdd">
-                    <form>
+                    <form action="handle" method="POST" id="send_entry">
                         <div class="DetailesAddContents">
                             <div class="DetailesAdd_block">
                                 <label for="header">Заголовок</label>
-                                <input type="text">
+                                <input type="text" name="header" id="add_header" autocomplete="off">
                             </div>
                             <div class="DetailesAdd_block">
                                 <label for="description">Описание</label>
-                                <textarea class="description"></textarea>
+                                <textarea name="description" id="add_description"></textarea>
                             </div>
                         </div>
                         <div class="DetailesAddTime">
                             <div class="DetailesAddTimeItem">
                                 <label for="total_day">В течение дня</label>
-                                <input type="checkbox" class="checkbox" checked="checked">
+                                <input type="checkbox" name="checkbox" class="checkbox" checked>
                             </div>
                             <h5 class="calendar_label">Начало</h5>
                             <div class="DetailesAddTimeItem_date">
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="year">Год</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="year_start" value="<?= $current_year ?>">
+                                    <input type="text" name="year_start" class="DetailesAddTimeItem_block__input" id="year_start" value="<?= $current_year ?>">
                                 </div>
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="month">Месяц</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="month_start" value="<?= $current_month ?>">
+                                    <input type="text" name="month_start" class="DetailesAddTimeItem_block__input" id="month_start" value="<?= $current_month ?>">
                                 </div>
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="day">День</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="day_start" value="<?= $current_day ?>">
+                                    <input type="text" name="day_start" class="DetailesAddTimeItem_block__input" id="day_start" value="<?= $current_day ?>">
                                 </div>
                             </div>
                             <div class="DetailesAddTimeItem_time" id="time_start">
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="hour">Час</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="hour_start" value="<?= $current_hour ?>">
+                                    <input type="text" name="hour_start" class="DetailesAddTimeItem_block__input" id="hour_start" value="<?= $current_hour ?>">
                                 </div>
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="minute">Минута</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="minute_start" value="<?= $current_minute ?>">
+                                    <input type="text" name="minute_start" class="DetailesAddTimeItem_block__input" id="minute_start" value="<?= $current_minute ?>">
                                 </div>
                             </div>
                             <h5 class="calendar_label">Конец</h5>
                             <div class="DetailesAddTimeItem_date">
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="year">Год</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="year_end" value="<?= $current_year ?>" readonly>
+                                    <input type="text" name="year_end" class="DetailesAddTimeItem_block__input" id="year_end" value="<?= $current_year ?>" readonly>
                                 </div>
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="month">Месяц</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="month_end" value="<?= $current_month ?>" readonly>
+                                    <input type="text" name="month_end" class="DetailesAddTimeItem_block__input" id="month_end" value="<?= $current_month ?>" readonly>
                                 </div>
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="day">День</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="day_end" value="<?= $current_day ?>" readonly>
+                                    <input type="text" name="day_end" class="DetailesAddTimeItem_block__input" id="day_end" value="<?= $current_day ?>" readonly>
                                 </div>
                             </div>
                             <div class="DetailesAddTimeItem_time" id="time_end">
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="hour">Час</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="hour_end" value="<?= $current_hour ?>">
+                                    <input type="text" name="hour_end" class="DetailesAddTimeItem_block__input" id="hour_end" value="<?= $current_hour ?>">
                                 </div>
                                 <div class="DetailesAddTimeItem_block">
                                     <label for="minute">Минута</label>
-                                    <input type="text" class="DetailesAddTimeItem_block__input" id="minute_end" value="<?= $current_minute ?>">
+                                    <input type="text" name="minute_end" class="DetailesAddTimeItem_block__input" id="minute_end" value="<?= $current_minute ?>">
                                 </div>
                             </div>
                         </div>
-                        <button class="date_button" onclick="_send_entry()">Сохранить</button>
+                        <button onclick="_send_entry(event)" class="date_button">Сохранить</button>
                     </form>
+                </div>
+                <div class="DetailesCalendar">
+                    <div class="DetailesCalendarDate">
+
+                    </div>
                 </div>
             </section>
             <section class="b_Calendar">

@@ -1,25 +1,38 @@
 function _add_entry() {
+    let add_entry = document.querySelector('.DetailesAdd');
     let settings = document.querySelector('.DetailesSettings');
-    let add = document.querySelector('.DetailesAdd');
-    settings.style.display = "none";
-    add.style.display = "block";
+    let day_contents = document.querySelector('.DetailesCalendar');
+    add_entry.style.display = 'block';
+    settings.style.display = 'none';
+    day_contents.style.display = 'none'
 }
 
 function _settings() {
+    let add_entry = document.querySelector('.DetailesAdd');
     let settings = document.querySelector('.DetailesSettings');
-    let add = document.querySelector('.DetailesAdd');
-    settings.style.display = "block";
-    add.style.display = "none"
+    let day_contents = document.querySelector('.DetailesCalendar');
+    add_entry.style.display = 'none';
+    settings.style.display = 'block';
+    day_contents.style.display = 'none';
 }
 
-function _send_entry() {
+function _day_contents() {
+    let add_entry = document.querySelector('.DetailesAdd');
+    let settings = document.querySelector('.DetailesSettings');
+    let day_contents = document.querySelector('.DetailesCalendar');
+    add_entry.style.display = 'none';
+    settings.style.display = 'none';
+    day_contents.style.display = 'block';
+}
+
+function _send_entry(event) {
+    let send_entry = document.querySelector('#send_entry');
+    let form = new FormData(send_entry);
+    event.preventDefault();
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', `/handle/`);
-    xhr.send();
+    xhr.open('POST', '/handle');
+    xhr.send(form);
     xhr.onload = function() {
-        if(xhr.status == 200) {
-            
-        }
-        else alert('Error');
-    }
+        alert('it\'s ok');
+    };
 }
