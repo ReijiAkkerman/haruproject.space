@@ -31,6 +31,12 @@ function _selected(Id) {
                     break;
             }
         }
+        let elements_array_in1 = ['#DateBar_year', '#DateBar_month', '#DateBar_day'];
+        let elements_array_out1 = [];
+        for(let i = 0; i < 3; i++) {
+            elements_array_out1[i] = document.querySelector(elements_array_in1[i]);
+            elements_array_out1[i].innerText = id_array[i];
+        }
     }
 }
 document.addEventListener("DOMContentLoaded", () => {

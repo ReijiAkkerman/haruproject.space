@@ -42,8 +42,6 @@ body::-webkit-scrollbar {
     width: 0;
 }
 
-
-
 input {
     border: none;
     border-top: 1px #500 solid;
@@ -242,6 +240,43 @@ header * {
 
 .DetailesCalendar {
     border-top: 1px #f00 solid;
+}
+
+.wrap_DetailesCalendarDate {
+    margin: 10px 0;
+}
+
+.DetailesCalendarDate * {
+    font-family: sao;
+}
+
+.DetailesCalendarDate > div {
+    width: 50px;
+}
+
+.DetailesCalendarDate > div > svg {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.DetailesCalendarDate > div > svg:hover {
+    border-bottom: 1px #f00 solid;
+    cursor: pointer;
+}
+
+.DetailesCalendarDate > div > span {
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.behind_values {
+    color: #700;
+}
+
+.front_values {
+    font-weight: bold;
 }
 
 .b_CalendarBar {

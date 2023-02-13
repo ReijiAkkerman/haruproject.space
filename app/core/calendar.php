@@ -133,3 +133,7 @@
         mysqli_query($connection, "INSERT INTO ReijiAkkerman_calendar (header, content, start_timelabel, end_timelabel, creation_timelabel, done, during_day) VALUES ('$header', '$description', '$start_timelabel', '$end_timelabel', '$creation_timelabel', 0, $checkbox)");
         mysqli_close($connection);
     }
+
+    function _view_data() {
+        $connection = mysqli_connect();
+    }

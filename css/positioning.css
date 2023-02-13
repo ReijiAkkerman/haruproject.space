@@ -108,13 +108,23 @@ header {
 }
 
 .DetailesCalendar {
-    display: block;
+    display: none;
     position: relative;
 }
 
 .DetailesCalendarDate {
     display: flex;
     justify-content: space-around;
+    position: relative;
+}
+
+.wrap_DetailesCalendarDate {
+    display: block;
+    position: relative;
+}
+
+.DetailesCalendarDate * {
+    display: block;
     position: relative;
 }
 

@@ -187,8 +187,28 @@
                     </form>
                 </div>
                 <div class="DetailesCalendar">
-                    <div class="DetailesCalendarDate">
-
+                    <div class="wrap_DetailesCalendarDate">
+                        <div class="DetailesCalendarDate">
+                            <div>
+                                <svg viewBox="0 0 1920 1920">
+                                    <path d="m1394.006 0 92.299 92.168-867.636 867.767 867.636 867.636-92.299 92.429-959.935-960.065z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="behind_values" id="DateBar_year"><?= $current_year ?></span>
+                            </div>
+                            <div>
+                                <span class="front_values" id="DateBar_day"><?= $current_day ?></span>
+                            </div>
+                            <div>
+                                <span class="behind_values" id="DateBar_month"><?= $current_month ?></span>
+                            </div>
+                            <div>
+                                <svg viewBox="0 0 1920 1920">
+                                    <path d="M526.299 0 434 92.168l867.636 867.767L434 1827.57l92.299 92.43 959.935-960.065z"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -238,9 +258,9 @@
                                     }
                                 }
                         ?>
-                    <button class="CalendarButton" onclick="_selected(this.id)" id="<?= $temp_year . '_' . $temp_month . '_' . $temp_day ?>">
+                    <button class="CalendarButton" onclick="_selected(this.id)" id="<?= $temp_year . '_' . $temp_month . '_' . $temp_day . '_' . $i ?>">
                         <div class="CalendarItem">
-                            <div class="CalendarItemDate" 
+                            <div class="CalendarItemDate"
                             <?php
                                 if(($temp_year == $current_year) && ($temp_month == $current_month) && ($temp_day == $current_day)) echo 'id="current_day"'
                             ?>
