@@ -1,3 +1,4 @@
+<?php include "../control/calendar.php" ?>
 <!DOCTYPE html>
 <html>
     <head>

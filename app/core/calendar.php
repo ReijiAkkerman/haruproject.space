@@ -21,6 +21,9 @@
     
     $inactive_days_before;
     $inactive_days_after;
+
+    $start_timelabel;
+    $end_timelabel;
     
     function calendar_default() {
         global $year_start;
@@ -134,6 +137,19 @@
         mysqli_close($connection);
     }
 
-    function _view_data() {
-        $connection = mysqli_connect();
+    function _view_data($login): object {
+        global $start_timelabel;
+        global $end_timelabel;
+
+        $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
+        $result = mysqli_query($connection, 'SELECT header FROM ' . $login . "_calendar WHERE start_timelabel>=$start_timelabel AND end_timelabel<=$end_timelabel");
+        return $result;
+    }
+
+    function _prepare_timelabels($day_start, $month_start, $year_start, $day_end, $month_end, $year_end) {
+        global $start_timelabel;
+        global $end_timelabel;
+
+        $start_timelabel = mktime(0, 0, 0, $month_start, $day_start, $year_start);
+        $end_timelabel = mktime(23, 59, 59, $month_end, $day_end, $year_end);
     }

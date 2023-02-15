@@ -2,8 +2,8 @@
     function _registration($login, $password, $timelabel, $hash):bool {
         $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
         if($connection) {
-            mysqli_query($connection, 'CREATE TABLE IF NOT EXISTS ' . $login . '_calendar(id INT PRIMARY KEY AUTO_INCREMENT, header TINYTEXT, content TEXT, start_timelabel TINYTEXT, end_timelabel TINYTEXT, creation_timelabel TINYTEXT, done BOOL, during_day BOOL)');
-            mysqli_query($connection, 'CREATE TABLE IF NOT EXISTS auth(id INT PRIMARY KEY AUTO_INCREMENT, login TINYTEXT, password TINYTEXT, timelabel TINYTEXT, hash TINYTEXT)');
+            mysqli_query($connection, 'CREATE TABLE IF NOT EXISTS ' . $login . '_calendar(id INT PRIMARY KEY AUTO_INCREMENT, header TINYTEXT, content TEXT, start_timelabel INT, end_timelabel INT, creation_timelabel INT, done BOOL, during_day BOOL)');
+            mysqli_query($connection, 'CREATE TABLE IF NOT EXISTS auth(id INT PRIMARY KEY AUTO_INCREMENT, login TINYTEXT, password TINYTEXT, timelabel INT, hash TINYTEXT)');
             mysqli_query($connection, "INSERT INTO auth(login, password, timelabel, hash) VALUES('$login', '$password', '$timelabel', '$hash')");
             mysqli_close($connection);
             return true;
