@@ -1,4 +1,3 @@
-<?php include "../control/calendar.php" ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -236,6 +235,7 @@
                             $temp_year = $year_start;
                             $temp_month = $month_start;
                             $temp_day = $day_start;
+                            $counter = 0;
                             for($i = 0; $i < $active_days; $i++) {
                                 $year_label = (int)date('L', mktime(1, 1, 1, $temp_month, $temp_day, $temp_year));
                                 if($year_label) {
@@ -276,7 +276,15 @@
                                 ?></div>
                             <div class="CalendarItemContents">
                                 <div class="CalendarItemContentsBlock">
-                                    
+                                <?php
+                                while(($temp_day === $calendar_data[$counter]->day) && ($temp_month === $calendar_data[$counter]->month) && ($temp_year === $calendar_data[$counter]->year)) {
+                                    if($temp_day === $calendar_data[$counter]->day)
+                                        if($temp_month === $calendar_data[$counter]->month)
+                                            if($temp_year === $calendar_data[$counter]->year)
+                                                echo '<pre>' . $calendar_data[$counter]->header . '</pre>';
+                                    $counter++;
+                                }
+                                ?>
                                 </div>
                             </div>
                         </div>

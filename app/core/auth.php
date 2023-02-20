@@ -87,6 +87,25 @@
         return false;
     }
 
+    function _get_login($hash): string|bool {
+        $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
+        if($connection) {
+            try {
+                $result = mysqli_query($connection, "SELECT login FROM auth WHERE hash = '$hash'");
+                mysqli_close($connection);
+            }
+            catch(Throwable) {
+                mysqli_close($connection);
+                return false;
+            }
+            if($result) {
+                foreach($result as $row) {
+                    return $row['login'];
+                }
+            }
+        }
+    }
+
     function _define_admin($hash):bool {
         $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
         if($connection) {

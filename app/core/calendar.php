@@ -24,6 +24,8 @@
 
     $start_timelabel;
     $end_timelabel;
+
+    $test;
     
     function calendar_default() {
         global $year_start;
@@ -137,19 +139,58 @@
         mysqli_close($connection);
     }
 
-    function _view_data($login): object {
+    function _get_headers($login): object {
         global $start_timelabel;
         global $end_timelabel;
 
         $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
-        $result = mysqli_query($connection, 'SELECT header FROM ' . $login . "_calendar WHERE start_timelabel>=$start_timelabel AND end_timelabel<=$end_timelabel");
+        $result = mysqli_query($connection, 'SELECT header, content, start_timelabel FROM ' . $login . "_calendar WHERE start_timelabel>=$start_timelabel AND end_timelabel<=$end_timelabel");
         return $result;
     }
 
-    function _prepare_timelabels($day_start, $month_start, $year_start, $day_end, $month_end, $year_end) {
+    function _prepare_timelabels() {
+        global $year_start;
+        global $month_start;
+        global $day_start;
+        global $year_end;
+        global $month_end;
+        global $day_end;
         global $start_timelabel;
         global $end_timelabel;
 
         $start_timelabel = mktime(0, 0, 0, $month_start, $day_start, $year_start);
         $end_timelabel = mktime(23, 59, 59, $month_end, $day_end, $year_end);
+    }
+
+    class Entry {
+        public $header;
+        public $description;
+        public $timelabel;
+        public $year;
+        public $month;
+        public $day;
+        function __construct($header, $description, $timelabel) {
+            $this->header = $header;
+            $this->description = $description;
+            $this->timelabel = $timelabel;
+        }
+    }
+
+    function _prepare_headers($headers_list): array {
+        $array = [];
+        $i = 0;
+        foreach($headers_list as $row) {
+            $temp_year = (int)date('o', $row['start_timelabel']);
+            $temp_month = (int)date('n', $row['start_timelabel']);
+            $temp_day = (int)date('j', $row['start_timelabel']);
+
+            $array[$i] = new Entry($row['header'], $row['content'], $row['start_timelabel']);
+            
+            $array[$i]->year = $temp_year;
+            $array[$i]->month = $temp_month;
+            $array[$i]->day = $temp_day;
+
+            $i++;
+        }
+        return $array;
     }

@@ -2,7 +2,8 @@
     require_once "app/core/calendar.php";
     require_once "app/core/auth.php";
 
-
+    // $path[1] = 'scheduler';
+    
 
     $path = explode('/', $_SERVER['REQUEST_URI']);
     switch($path[1]) {
@@ -16,8 +17,10 @@
             if(isset($_COOKIE['id']))
                 $id = $_COOKIE['id'];
             if(isset($id) && ($id != null && $id != false)) {
+                // $id = 'f030132eb2fad3a6a6b98f41ad24545a';
                 $is_admin = _define_admin($id);
-                calendar_default();
+                include "app/control/view_calendar.php";
+                // include "app/view/test.php";
                 include "app/view/scheduler.php";
             }
             else header("Location: error");
