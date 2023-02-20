@@ -189,7 +189,6 @@
             $array[$i]->year = $temp_year;
             $array[$i]->month = $temp_month;
             $array[$i]->day = $temp_day;
-
             $i++;
         }
         return $array;

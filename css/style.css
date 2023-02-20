@@ -348,14 +348,16 @@ header * {
     overflow: hidden;
 }
 
-.CalendarItemContents * {
+.CalendarItemContents > .CalendarItemContentsBlock * {
     font-family: sao;
     font-variant: normal;
     letter-spacing: 1px;
     font-size: 20px;
-    background-color: #0af;
+    background-color: #a002;
     padding-left: 2px;
-    color: #fff;
+    color: #f00;
+    border-bottom: 1px #500 solid;
+    padding-top: 3px;
 }
 
 #current_day {

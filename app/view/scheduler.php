@@ -235,8 +235,8 @@
                             $temp_year = $year_start;
                             $temp_month = $month_start;
                             $temp_day = $day_start;
-                            $counter = 0;
                             for($i = 0; $i < $active_days; $i++) {
+                                // $counter = 0;
                                 $year_label = (int)date('L', mktime(1, 1, 1, $temp_month, $temp_day, $temp_year));
                                 if($year_label) {
                                     if($temp_day > $months_of_leap_year[$temp_month - 1]) {
@@ -277,12 +277,13 @@
                             <div class="CalendarItemContents">
                                 <div class="CalendarItemContentsBlock">
                                 <?php
-                                while(($temp_day === $calendar_data[$counter]->day) && ($temp_month === $calendar_data[$counter]->month) && ($temp_year === $calendar_data[$counter]->year)) {
-                                    if($temp_day === $calendar_data[$counter]->day)
-                                        if($temp_month === $calendar_data[$counter]->month)
-                                            if($temp_year === $calendar_data[$counter]->year)
-                                                echo '<pre>' . $calendar_data[$counter]->header . '</pre>';
-                                    $counter++;
+                                // while(($temp_day === $calendar_data[$counter]->day) && ($temp_month === $calendar_data[$counter]->month) && ($temp_year === $calendar_data[$counter]->year)) {
+                                foreach($calendar_data as $key => $value) {
+                                    if($temp_day === $value->day)
+                                        if($temp_month === $value->month)
+                                            if($temp_year === $value->year)
+                                                echo '<pre>' . $value->header . '</pre>';
+                                    // $counter++;
                                 }
                                 ?>
                                 </div>
