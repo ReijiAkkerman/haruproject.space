@@ -37,7 +37,7 @@ function _selected(Id) {
         let elements_array_out1 = [];
         for(let i = 0; i < 3; i++) {
             elements_array_out1[i] = document.querySelector(elements_array_in1[i]);
-            elements_array_out1[i].innerText = id_array[i];
+            elements_array_out1[i].innerText = id_array[i + 1];
         }
     }
 }
