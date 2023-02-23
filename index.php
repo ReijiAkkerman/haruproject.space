@@ -154,33 +154,33 @@
             header("Location: /");
             break;
         case 'handle':
-            if($_POST['header'])
+            if(isset($_POST['header']))
                 $header = $_POST['header'];
-            if($_POST['description'])
+            if(isset($_POST['description']))
                 $description = $_POST['description'];
-            if($_POST['checkbox'])
+            if(isset($_POST['checkbox']))
                 $checkbox = $_POST['checkbox'];
             if($checkbox == 'on') $checkbox = 1;
             else $checkbox = 0;
-            if($_POST['hour_start'])
+            if(isset($_POST['hour_start']))
                 $hour_start = $_POST['hour_start'];
-            if($_POST['minute_start'])
+            if(isset($_POST['minute_start']))
                 $minute_start = $_POST['minute_start'];
-            if($_POST['hour_end'])
+            if(isset($_POST['hour_end']))
                 $hour_end = $_POST['hour_end'];
-            if($_POST['minute_end'])
+            if(isset($_POST['minute_end']))
                 $minute_end = $_POST['minute_end'];
-            if($_POST['year_start'])
+            if(isset($_POST['year_start']))
                 $year_start = $_POST['year_start'];
-            if($_POST['month_start'])
+            if(isset($_POST['month_start']))
                 $month_start = $_POST['month_start'];
-            if($_POST['day_start'])
+            if(isset($_POST['day_start']))
                 $day_start = $_POST['day_start'];
-            if($_POST['year_end'])
+            if(isset($_POST['year_end']))
                 $year_end = $_POST['year_end'];
-            if($_POST['month_end'])
+            if(isset($_POST['month_end']))
                 $month_end = $_POST['month_end'];
-            if($_POST['day_end'])
+            if(isset($_POST['day_end']))
                 $day_end = $_POST['day_end'];
             if($_COOKIE['id'])
                 $id = $_COOKIE['id'];
