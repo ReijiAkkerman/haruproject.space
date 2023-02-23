@@ -133,10 +133,34 @@
         }
     }
 
-    function _add_entry($header, $description, $start_timelabel, $end_timelabel, $creation_timelabel, $checkbox):bool {
+    function _add_entry($header, $description, $start_timelabel, $end_timelabel, $creation_timelabel, $checkbox, $login) {
         $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
-        mysqli_query($connection, "INSERT INTO ReijiAkkerman_calendar (header, content, start_timelabel, end_timelabel, creation_timelabel, done, during_day) VALUES ('$header', '$description', '$start_timelabel', '$end_timelabel', '$creation_timelabel', 0, $checkbox)");
+        mysqli_query($connection, 'INSERT INTO ' . $login . "_calendar (header, content, start_timelabel, end_timelabel, creation_timelabel, done, during_day) VALUES ('$header', '$description', '$start_timelabel', '$end_timelabel', '$creation_timelabel', 0, $checkbox)");
         mysqli_close($connection);
+    }
+
+    function _send_entry($login):string {
+        global $start_timelabel;
+        global $end_timelabel;
+
+        $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
+        if($connection) {
+            $result = mysqli_query($connection, 'SELECT header, start_timelabel FROM ' . $login . "_calendar WHERE start_timelabel=$start_timelabel");
+            mysqli_close($connection);
+        }
+        if($result) {
+            foreach($result as $row) {
+                $header = $row['header'];
+                $timelabel = $row['start_timelabel'];
+                $str = "{
+                    \"entry\": {
+                        \"header\": \"$header\",
+                        \"timelabel\": $timelabel
+                    }
+                }";
+            }
+        }
+        return $str;
     }
 
     function _get_headers($login): object {
@@ -144,7 +168,10 @@
         global $end_timelabel;
 
         $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
-        $result = mysqli_query($connection, 'SELECT header, content, start_timelabel FROM ' . $login . "_calendar WHERE start_timelabel>=$start_timelabel AND end_timelabel<=$end_timelabel");
+        if($connection) {
+            $result = mysqli_query($connection, 'SELECT header, content, start_timelabel FROM ' . $login . "_calendar WHERE start_timelabel>=$start_timelabel AND end_timelabel<=$end_timelabel");
+            mysqli_close($connection);
+        }
         return $result;
     }
 

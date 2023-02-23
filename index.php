@@ -3,13 +3,12 @@
     require_once "app/core/auth.php";
 
     // $path[1] = 'scheduler';
-    
 
     $path = explode('/', $_SERVER['REQUEST_URI']);
     switch($path[1]) {
         case '':
             if(isset($_COOKIE['id']))
-            header("Location: scheduler");
+                header("Location: scheduler");
             else
             include "app/view/enter.php";
             break;
@@ -170,7 +169,7 @@
             if($_POST['hour_end'])
                 $hour_end = $_POST['hour_end'];
             if($_POST['minute_end'])
-                $minute_end = $_POST['minuet_end'];
+                $minute_end = $_POST['minute_end'];
             if($_POST['year_start'])
                 $year_start = $_POST['year_start'];
             if($_POST['month_start'])
@@ -183,11 +182,18 @@
                 $month_end = $_POST['month_end'];
             if($_POST['day_end'])
                 $day_end = $_POST['day_end'];
+            if($_COOKIE['id'])
+                $id = $_COOKIE['id'];
+            
+            $login = _get_login($id);
 
             $start_timelabel = (string)mktime($hour_start, $minute_start, 0, $month_start, $day_start, $year_start);
             $end_timelabel = (string)mktime($hour_start, $minute_start, 0, $month_start, $day_start, $year_start);
             $creation_timelabel = (string)time();
-            _add_entry($header, $description, $start_timelabel, $end_timelabel, $creation_timelabel, $checkbox);
+            _add_entry($header, $description, $start_timelabel, $end_timelabel, $creation_timelabel, $checkbox, $login);
+
+            $temp_str = _send_entry($login);
+            echo $temp_str;
             break;
         case 'test':
             echo "hello";

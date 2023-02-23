@@ -1,4 +1,6 @@
 var selected;
+let today = document.querySelector('.today');
+selected = today.id;
 function _selected(Id) {
     {
         let array = document.querySelectorAll('.CalendarButton');
@@ -21,13 +23,13 @@ function _selected(Id) {
                 case 4: case 5: case 9: case 10:
                     continue;
                 case 1: case 6:
-                    elements_array_out[i].value = id_array[0];
-                    break;
-                case 2: case 7:
                     elements_array_out[i].value = id_array[1];
                     break;
-                case 3: case 8:
+                case 2: case 7:
                     elements_array_out[i].value = id_array[2];
+                    break;
+                case 3: case 8:
+                    elements_array_out[i].value = id_array[3];
                     break;
             }
         }

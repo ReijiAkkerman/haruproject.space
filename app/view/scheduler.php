@@ -259,7 +259,7 @@
                                     }
                                 }
                         ?>
-                    <button class="CalendarButton" onclick="_selected(this.id)" id="<?= $temp_year . '_' . $temp_month . '_' . $temp_day . '_' . $i ?>">
+                    <button class="CalendarButton <?php if(($temp_year == $current_year) && ($temp_month == $current_month) && ($temp_day == $current_day)) echo 'today' ?>" onclick="_selected(this.id)" id="<?= 'b_' . $temp_year . '_' . $temp_month . '_' . $temp_day . '_' . $i ?>">
                         <div class="CalendarItem">
                             <div class="CalendarItemDate"
                             <?php

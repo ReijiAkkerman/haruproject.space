@@ -31,8 +31,13 @@ function _send_entry(event) {
     event.preventDefault();
     let xhr = new XMLHttpRequest();
     xhr.open('POST', '/handle');
+    xhr.responseType = 'json';
     xhr.send(form);
     xhr.onload = function() {
-        alert('it\'s ok');
+        let value = '#' + selected;
+        let target_day = document.querySelector(value);
+        let entry = target_day.querySelector('.CalendarItemContentsBlock');
+        let header = xhr.response;
+        entry.innerHTML += '<pre>' + header['entry']['header'] + '</pre>';
     };
 }
