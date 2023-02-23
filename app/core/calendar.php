@@ -133,7 +133,7 @@
         }
     }
 
-    function _add_entry($header, $description, $start_timelabel, $end_timelabel, $creation_timelabel, $checkbox, $login) {
+    function _add_entry($header, $description = '', $start_timelabel, $end_timelabel, $creation_timelabel, $checkbox, $login) {
         $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
         mysqli_query($connection, 'INSERT INTO ' . $login . "_calendar (header, content, start_timelabel, end_timelabel, creation_timelabel, done, during_day) VALUES ('$header', '$description', '$start_timelabel', '$end_timelabel', '$creation_timelabel', 0, $checkbox)");
         mysqli_close($connection);
