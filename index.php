@@ -190,7 +190,7 @@
             $start_timelabel = (string)mktime($hour_start, $minute_start, 0, $month_start, $day_start, $year_start);
             $end_timelabel = (string)mktime($hour_start, $minute_start, 0, $month_start, $day_start, $year_start);
             $creation_timelabel = (string)time();
-            _add_entry($header, $description, $start_timelabel, $end_timelabel, $creation_timelabel, $checkbox, $login);
+            _add_entry($header, $start_timelabel, $end_timelabel, $creation_timelabel, $checkbox, $login, $description);
 
             $temp_str = _send_entry($login);
             echo $temp_str;
