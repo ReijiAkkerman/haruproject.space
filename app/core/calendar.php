@@ -163,7 +163,7 @@
         return $str;
     }
 
-    function _get_headers($login): object {
+    function _get_entries($login): object {
         global $start_timelabel;
         global $end_timelabel;
 

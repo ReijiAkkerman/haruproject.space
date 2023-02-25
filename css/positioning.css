@@ -112,18 +112,28 @@ header {
     position: relative;
 }
 
+.w_DetailesCalendarDate {
+    display: block;
+    position: relative;
+}
+
 .DetailesCalendarDate {
     display: flex;
     justify-content: space-around;
     position: relative;
 }
 
-.wrap_DetailesCalendarDate {
+.DetailesCalendarDate * {
     display: block;
     position: relative;
 }
 
-.DetailesCalendarDate * {
+.DetailesCalendarContents {
+    display: block;
+    position: relative;
+}
+
+.DetailesCalendarContentsEntry {
     display: block;
     position: relative;
 }

@@ -41,3 +41,7 @@ function _send_entry(event) {
         entry.innerHTML += '<pre>' + header['entry']['header'] + '</pre>';
     };
 }
+
+function _view_entry(Id) {
+    
+}

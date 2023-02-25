@@ -39,6 +39,24 @@ function _selected(Id) {
             elements_array_out1[i] = document.querySelector(elements_array_in1[i]);
             elements_array_out1[i].innerText = id_array[i + 1];
         }
+        let obj = `${Id}`;
+        xhr = new XMLHttpRequest();
+        xhr.open('POST', '/getEntries');
+        xhr.send(obj);
+        xhr.onload = function() {
+            let chosen_day = document.querySelector(`#${Id}`);
+            let entries = chosen_day.querySelector('.CalendarItemContentsBlock');
+            let day_contents = document.querySelector('.DetailesCalendarContents');
+            day_contents.innerHTML = '';
+            _day_contents();
+            let counter = entries.children.length;
+            for(let i = 0; i < counter; i++) {
+                let elem = document.createElement('button');
+                elem.className = 'DetailesCalendarContentsEntry';
+                elem.innerHTML = entries.children[i].innerHTML;
+                day_contents.append(elem);
+            }
+        }
     }
 }
 document.addEventListener("DOMContentLoaded", () => {

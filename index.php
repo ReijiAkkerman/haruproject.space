@@ -195,6 +195,11 @@
             $temp_str = _send_entry($login);
             echo $temp_str;
             break;
+        case 'getEntries':
+            $str = file_get_contents('php://input');
+            $parsed_values = explode('_', $str);
+            
+            break;
         case 'test':
             echo "hello";
             break;

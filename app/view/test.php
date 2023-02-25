@@ -4,6 +4,7 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <h1><?= $test ?></h1>
+        <button onclick="some_function();">Кнопка</button>
+        <script src="../../start.js"></script>
     </body>
 </html>

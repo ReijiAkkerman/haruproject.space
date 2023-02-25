@@ -187,7 +187,7 @@
                     </form>
                 </div>
                 <div class="DetailesCalendar">
-                    <div class="wrap_DetailesCalendarDate">
+                    <div class="w_DetailesCalendarDate">
                         <div class="DetailesCalendarDate">
                             <div>
                                 <svg viewBox="0 0 1920 1920">
@@ -209,6 +209,13 @@
                                 </svg>
                             </div>
                         </div>
+                    </div>
+                    <div class="DetailesCalendarContents">
+                        <button class="DetailesCalendarContentsEntry">Кнопка</button>
+                        <button class="DetailesCalendarContentsEntry">Кнопка</button>
+                        <button class="DetailesCalendarContentsEntry">Кнопка</button>
+                        <button class="DetailesCalendarContentsEntry">Кнопка</button>
+                        <button class="DetailesCalendarContentsEntry">Кнопка</button>
                     </div>
                 </div>
             </section>

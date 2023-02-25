@@ -240,9 +240,10 @@ header * {
 
 .DetailesCalendar {
     border-top: 1px #f00 solid;
+    height: 100%;
 }
 
-.wrap_DetailesCalendarDate {
+.w_DetailesCalendarDate {
     margin: 10px 0;
 }
 
@@ -269,6 +270,32 @@ header * {
 .DetailesCalendarDate > div > span {
     font-size: 20px;
     padding: 10px 0;
+}
+
+.DetailesCalendarContents {
+    overflow: auto;
+    width: 100%;
+    height: 573px;
+    border-top: 1px #f00 solid;
+}
+
+.DetailesCalendarContents::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.DetailesCalendarContentsEntry {
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    background-color: #f001;
+    border-bottom: 1px #500 solid;
+}
+
+.DetailesCalendarContentsEntry:hover {
+    background-color: #f003;
+    border-bottom: 1px #f00 solid;
+    cursor: pointer;
 }
 
 .behind_values {
@@ -306,6 +333,7 @@ header * {
 }
 
 .CalendarButton {
+    overflow: auto;
     height: 168px;
     width: 100px;
     background-color: #f001;
@@ -314,6 +342,7 @@ header * {
 }
 
 .CalendarButton_inactive {
+    overflow: auto;
     height: 168px;
     width: 100px;
     background-color: #7772;
@@ -324,6 +353,11 @@ header * {
 .CalendarButton:hover {
     background-color: #f001;
     border-color: #f00;
+}
+
+.CalendarButton::-webkit-scrollbar, .CalendarButton_inactive::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .CalendarItem {
