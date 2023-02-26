@@ -189,11 +189,11 @@
                 <div class="DetailesCalendar">
                     <div class="w_DetailesCalendarDate">
                         <div class="DetailesCalendarDate">
-                            <div>
+                            <button onclick="back()">
                                 <svg viewBox="0 0 1920 1920">
                                     <path d="m1394.006 0 92.299 92.168-867.636 867.767 867.636 867.636-92.299 92.429-959.935-960.065z"/>
                                 </svg>
-                            </div>
+                            </button>
                             <div>
                                 <span class="behind_values" id="DateBar_year"><?= $current_year ?></span>
                             </div>
@@ -203,19 +203,15 @@
                             <div>
                                 <span class="behind_values" id="DateBar_month"><?= $current_month ?></span>
                             </div>
-                            <div>
+                            <button onclick="next()">
                                 <svg viewBox="0 0 1920 1920">
                                     <path d="M526.299 0 434 92.168l867.636 867.767L434 1827.57l92.299 92.43 959.935-960.065z"/>
                                 </svg>
-                            </div>
+                            </button>
                         </div>
                     </div>
                     <div class="DetailesCalendarContents">
-                        <button class="DetailesCalendarContentsEntry">Кнопка</button>
-                        <button class="DetailesCalendarContentsEntry">Кнопка</button>
-                        <button class="DetailesCalendarContentsEntry">Кнопка</button>
-                        <button class="DetailesCalendarContentsEntry">Кнопка</button>
-                        <button class="DetailesCalendarContentsEntry">Кнопка</button>
+                        <button class="DetailesCalendarContentsEntry"><pre>Кнопка и мноооооооооого текста</pre></button>
                     </div>
                 </div>
             </section>
@@ -266,7 +262,7 @@
                                     }
                                 }
                         ?>
-                    <button class="CalendarButton <?php if(($temp_year == $current_year) && ($temp_month == $current_month) && ($temp_day == $current_day)) echo 'today' ?>" onclick="_selected(this.id)" id="<?= 'b_' . $temp_year . '_' . $temp_month . '_' . $temp_day . '_' . $i ?>">
+                    <button class="CalendarButton <?php if(($temp_year == $current_year) && ($temp_month == $current_month) && ($temp_day == $current_day)) echo 'today' ?> <?= 'b' . $i ?>" onclick="_selected(this.id)" id="<?= 'b_' . $temp_year . '_' . $temp_month . '_' . $temp_day ?>">
                         <div class="CalendarItem">
                             <div class="CalendarItemDate"
                             <?php
@@ -372,5 +368,6 @@
         </footer>
         <script src="js/mouse.js"></script>
         <script src="js/buttons.js"></script>
+        <script src="js/run.js"></script>
     </body>
 </html>

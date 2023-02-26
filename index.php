@@ -2,7 +2,8 @@
     require_once "app/core/calendar.php";
     require_once "app/core/auth.php";
 
-    // $path[1] = 'scheduler';
+    // $path[1] = 'getEntries';
+    // $id = 'f030132eb2fad3a6a6b98f41ad24545a';
 
     $path = explode('/', $_SERVER['REQUEST_URI']);
     switch($path[1]) {
@@ -182,7 +183,7 @@
                 $month_end = $_POST['month_end'];
             if(isset($_POST['day_end']))
                 $day_end = $_POST['day_end'];
-            if($_COOKIE['id'])
+            if(isset($_COOKIE['id']))
                 $id = $_COOKIE['id'];
             
             $login = _get_login($id);
@@ -196,9 +197,35 @@
             echo $temp_str;
             break;
         case 'getEntries':
+            if(isset($_COOKIE['id']))
+                $id = $_COOKIE['id'];
             $str = file_get_contents('php://input');
             $parsed_values = explode('_', $str);
-            
+
+            // $parsed_values[1] = 2023;
+            // $parsed_values[2] = 2;
+            // $parsed_values[3] = 26;
+
+            $year_start = $year_end = (int)$parsed_values[1];
+            $month_start = $month_end = (int)$parsed_values[2];
+            $day_start = $day_end = (int)$parsed_values[3];
+
+            _prepare_timelabels();
+            $login = _get_login($id);
+            $entries = _get_entries($login);
+
+            $sending_str = '{"entries": [';
+            $i = 0;
+            $ending_counter = $entries->num_rows;
+
+            foreach($entries as $row) {
+                $sending_str .= '{"header": "' . $row['header'] . '", "id": ' . $row['id'] . ', "description": "' . $row['content'] . '"}';
+                if($i < $ending_counter - 1) $sending_str .= ',';
+                $i++;
+            }
+            $sending_str .= ']}';
+
+            echo $sending_str;
             break;
         case 'test':
             echo "hello";

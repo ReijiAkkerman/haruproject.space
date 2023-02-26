@@ -4,7 +4,6 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <button onclick="some_function();">Кнопка</button>
-        <script src="../../start.js"></script>
+        <h1><?= var_dump($entries) ?></h1>
     </body>
 </html>

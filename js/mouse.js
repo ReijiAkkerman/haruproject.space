@@ -1,4 +1,5 @@
 var selected;
+var previous;
 let today = document.querySelector('.today');
 selected = today.id;
 function _selected(Id) {
@@ -7,7 +8,7 @@ function _selected(Id) {
         array.forEach(b => b.style.borderColor = "#500");
         array.forEach(c => c.style.backgroundColor = "#f001");
         document.getElementById(Id).style.borderColor = '#f00';
-        document.getElementById(Id).style.backgroundColor = "#fff1";
+        // document.getElementById(Id).style.backgroundColor = "#fff1";
         selected = Id;
     }
     {
@@ -39,23 +40,24 @@ function _selected(Id) {
             elements_array_out1[i] = document.querySelector(elements_array_in1[i]);
             elements_array_out1[i].innerText = id_array[i + 1];
         }
-        let obj = `${Id}`;
-        xhr = new XMLHttpRequest();
-        xhr.open('POST', '/getEntries');
-        xhr.send(obj);
-        xhr.onload = function() {
-            let chosen_day = document.querySelector(`#${Id}`);
-            let entries = chosen_day.querySelector('.CalendarItemContentsBlock');
+        let chosen_day = document.querySelector(`#${Id}`);
+        let chosen_dayContents = chosen_day.querySelector('.CalendarItemContentsBlock');
+        if(chosen_dayContents.children.length) {
             let day_contents = document.querySelector('.DetailesCalendarContents');
             day_contents.innerHTML = '';
-            _day_contents();
-            let counter = entries.children.length;
-            for(let i = 0; i < counter; i++) {
-                let elem = document.createElement('button');
-                elem.className = 'DetailesCalendarContentsEntry';
-                elem.innerHTML = entries.children[i].innerHTML;
-                day_contents.append(elem);
+            _day_contents(Id);
+            let obj = `${Id}`;
+            xhr = new XMLHttpRequest();
+            xhr.open('POST', '/getEntries');
+            xhr.responseType = 'json';
+            xhr.send(obj);
+            xhr.onload = function() {
+                let content = xhr.response;
+                alert(content['entries'][0]['description']);
             }
+        }
+        else {
+            _add_entry();
         }
     }
 }
