@@ -139,7 +139,7 @@ header {
 }
 
 .w_Calendar {
-    display: none;
+    display: block;
     position: relative;
 }
 
@@ -159,7 +159,7 @@ header {
 }
 
 .Info {
-    display: block;
+    display: none;
     position: relative;
 }
 

@@ -10,6 +10,11 @@ function _add_entry() {
     parent.children[0].style.borderBottomColor = '#0000';
     parent.children[1].style.borderBottomColor = '#0000';
     parent.children[2].style.borderBottomColor = '#f00';
+
+    let calendar = document.querySelector('.w_Calendar');
+    let info = document.querySelector('.Info');
+    calendar.style.display = 'block';
+    info.style.display = 'none';
 }
 
 function _settings() {
@@ -57,8 +62,25 @@ function _day_contents(id = 0) {
         let elem = document.createElement('button');
         elem.className = 'DetailesCalendarContentsEntry';
         elem.innerHTML = todayContents.children[i].outerHTML;
+        elem.addEventListener('click', function() {
+            let calendar = document.querySelector('.w_Calendar');
+            let info = document.querySelector('.Info');
+            calendar.style.display = 'none';
+            info.style.display = 'block';
+            
+            let form = document.querySelector('.InfoBlock');
+            let array_selectors = ['header', 'description', 'year_start', 'month_start', 'day_start', 'hour_start', 'minute_start', 'year_end', 'month_end', 'day_end', 'hour_end', 'minute_end'];
+            let array_elements = [];
+
+            // for(let i = 0; i < 12; i++) 
+            //     array_elements[i] = form.querySelector(`[name="${array_selectors[i]}"]`);
+        });
         entriesBlock.append(elem);
     }
+    let calendar = document.querySelector('.w_Calendar');
+    let info = document.querySelector('.Info');
+    calendar.style.display = 'block';
+    info.style.display = 'none';
 }
 
 function _send_entry(event) {
@@ -100,8 +122,41 @@ function back() {
     }
 }
 
-function edit_entry() {
+function edit_entry(element) {
+    let svg = element.querySelector('svg');
+    let delete_entry = document.querySelector('#delete_entry');
+    let save_entry = document.querySelector('#save_entry');
+    let done_entry = document.querySelector('#done_entry');
+    let delete_entry_svg = delete_entry.querySelector('svg');
+    let save_entry_svg = save_entry.querySelector('svg');
+    let done_entry_svg = done_entry.querySelector('svg');
+
+    let form = document.querySelector('.InfoBlock');
+    let array_selectors = ['header', 'description', 'year_start', 'month_start', 'day_start', 'hour_start', 'minute_start', 'year_end', 'month_end', 'day_end', 'hour_end', 'minute_end'];
+    let array_elements = [];
     
+    if(editStatus) {
+        for(let i = 0; i < 12; i++) {
+            array_elements[i] = form.querySelector(`[name="${array_selectors[i]}"]`);
+            array_elements[i].setAttribute('readonly', true);
+        }
+        svg.style.fill = '#f00'
+        delete_entry_svg.style.fill = '#500';
+        save_entry_svg.style.fill = '#500';
+        done_entry_svg.style.fill = '#500';
+        editStatus = false;
+    }
+    else {
+        for(let i = 0; i < 12; i++) {
+            array_elements[i] = form.querySelector(`[name="${array_selectors[i]}"]`);
+            array_elements[i].removeAttribute('readonly');
+        }
+        svg.style.fill = '#500';
+        delete_entry_svg.style.fill = '#f00';
+        save_entry_svg.style.fill = '#f00';
+        done_entry_svg.style.fill = '#f00';
+        editStatus = true;
+    }
 }
 
 function delete_entry() {

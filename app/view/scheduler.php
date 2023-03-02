@@ -307,33 +307,33 @@
             </section>
             <section class="Info">
                 <div class="InfoBlock">
-                    <input type="text" name="header" placeholder="Заголовок" readonly>
-                    <textarea name="description" placeholder="Описание" readonly></textarea>
+                    <input type="text" name="header" placeholder="Заголовок" readonly autocomplete="off">
+                    <textarea name="description" placeholder="Описание" readonly autocomplete="off"></textarea>
                     <div class="InfoBlockFields">
                         <div>
                             <h6>Начало</h6>
                             <div>
                                 <div>
                                     <label for="year">Год</label>
-                                    <input type="text">
+                                    <input type="text" name="year_start" readonly autocomplete="off">
                                 </div>
                                 <div>
                                     <label for="month">Месяц</label>
-                                    <input type="text">
+                                    <input type="text" name="month_start" readonly autocomplete="off">
                                 </div>
                                 <div>
                                     <label for="day">День</label>
-                                    <input type="text">
+                                    <input type="text" name="day_start" readonly autocomplete="off">
                                 </div>
                             </div>
                             <div>
                                 <div>
                                     <label for="hour">Час</label>
-                                    <input type="text">
+                                    <input type="text" name="hour_start" readonly autocomplete="off">
                                 </div>
                                 <div>
                                     <label for="minute">Минута</label>
-                                    <input type="text">
+                                    <input type="text" name="minute_start" readonly autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -342,32 +342,32 @@
                             <div>
                                 <div>
                                     <label for="year">Год</label>
-                                    <input type="text">
+                                    <input type="text" name="year_end" readonly autocomplete="off">
                                 </div>
                                 <div>
                                     <label for="month">Месяц</label>
-                                    <input type="text">
+                                    <input type="text" name="month_end" readonly autocomplete="off">
                                 </div>
                                 <div>
                                     <label for="day">День</label>
-                                    <input type="text">
+                                    <input type="text" name="day_end" readonly autocomplete="off">
                                 </div>
                             </div>
                             <div>
                                 <div>
                                     <label for="hour">Час</label>
-                                    <input type="text">
+                                    <input type="text" name="hour_end" readonly autocomplete="off">
                                 </div>
                                 <div>
                                     <label for="minute">Минута</label>
-                                    <input type="text">
+                                    <input type="text" name="minute_end" readonly autocomplete="off">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="InfoBlockToolbar">
                         <div>
-                            <button>
+                            <button onclick="edit_entry(this)" id="edit_entry">
                                 <svg viewBox="0 0 24 24">
                                     <path d="M18.52 4l-1 1H2V4zM2 8v1h11.52l1-1zm4.52 8H2v1h3.655a1.477 1.477 0 0 1 .282-.417zM2 12v1h7.52l1-1zm20.95-6.066a.965.965 0 0 1 .03 1.385L9.825 20.471 5.73 22.227a.371.371 0 0 1-.488-.487l1.756-4.097L20.15 4.491a.965.965 0 0 1 1.385.03zM9.02 19.728l-1.28-1.28-.96 2.24zM20.093 8.79L18.68 7.376 8.382 17.674l1.413 1.414zm1.865-2.445l-.804-.838a.42.42 0 0 0-.6-.007l-1.167 1.17L20.8 8.083l1.152-1.151a.42.42 0 0 0 .006-.587z"/>
                                     <path fill="none" d="M0 0h24v24H0z"/>
@@ -375,17 +375,17 @@
                             </button>
                         </div>
                         <div>
-                            <button>
+                            <button onclick="delete_entry()" class="edit_entry" id="delete_entry">
                                 <svg viewBox="0 0 342.947 342.947">
                                     <polygon points="342.947,21.213 321.734,0 171.473,150.26 21.213,0 0,21.213 150.26,171.473 0,321.734 21.213,342.947 171.473,192.686 321.734,342.947 342.947,321.734 192.686,171.473 "/>
                                 </svg>
                             </button>
-                            <button>
+                            <button onclick="save_entry()" class="edit_entry" id="save_entry">
                                 <svg viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.04 1.33L12.71 3l.29.71v.33h-.5l-.5.5v-.83l-1.67-1.67H10v4H4v-4H2v10h3l-.5 1H2l-1-1v-10l1-1h8.33l.71.29zM7 5h2V2H7v3zm6.5 0L15 6.5l-.02.69-5.5 5.5-.13.12-.37.37-.1.09-3 1.5-.67-.67 1.5-3 .09-.1.37-.37.12-.13 5.5-5.5h.71zm-6.22 7.24l-.52 1 1.04-.48-.52-.52zm.69-1.03l.79.79 5.15-5.15-.79-.79-5.15 5.15z"/>
                                 </svg>
                             </button>
-                            <button>
+                            <button onclick="done_entry()" class="edit_entry" id="done_entry">
                                 <svg viewBox="0 0 406.834 406.834">
                                     <polygon points="385.621,62.507 146.225,301.901 21.213,176.891 0,198.104 146.225,344.327 406.834,83.72 "/>
                                 </svg>

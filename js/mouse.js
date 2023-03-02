@@ -1,5 +1,6 @@
 var selected;
 var previous = null;
+var editStatus = false;
 let today = document.querySelector('.today');
 today.style.borderColor = '#f00';
 selected = previous = today.id;
@@ -9,14 +10,14 @@ function _selected(Id) {
             let last_active = document.querySelector(`#${previous}`);
             let button = document.querySelector(`#${Id}`);
             last_active.style.borderColor = '#500';
-            last_active.style.backgroundColor = '#f001';
+            // last_active.style.backgroundColor = '#f001';
             button.style.borderColor = '#f00';
-            button.style.backgroundColor = '#fff1';
+            // button.style.backgroundColor = '#fff1';
         }
         else {
             let button = document.querySelector(`#${Id}`);
             button.style.borderColor = '#f00';
-            button.style.backgroundColor = '#fff1';
+            // button.style.backgroundColor = '#fff1';
         }
         selected = previous = Id;
     }
@@ -62,7 +63,7 @@ function _selected(Id) {
             xhr.send(obj);
             xhr.onload = function() {
                 let content = xhr.response;
-                alert(content['entries'][0]['description']);
+                // alert(content['entries'][0]['description']);
             }
         }
         else {
@@ -74,15 +75,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let array = document.querySelectorAll('.CalendarButton');
     array.forEach((id) => {
         id.addEventListener("mouseover", () => {
-            if(id.id != selected)
+            if(id.id != selected) 
                 id.style.borderColor = "#f00"
-                id.style.backgroundColor = "#fff1";
+            id.style.backgroundColor = "#fff1";
         });
     });
     array.forEach((id) => {
         id.addEventListener("mouseout", () => {
-            if(id.id != selected)
-            id.style.borderColor = "#500"
+            if(id.id != selected) 
+                id.style.borderColor = "#500"
             id.style.backgroundColor = "#f001";
         });
     });
@@ -103,5 +104,22 @@ document.addEventListener("DOMContentLoaded", () => {
         else
             for(let i = 0; i < 2; i++)
                 time_array[i].style.display = "flex";
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    let buttons_array = document.querySelectorAll('.edit_entry');
+    buttons_array.forEach((el) => {
+        el.addEventListener("mouseover", () => {
+            if(editStatus) {
+                el.children[0].style.borderColor = '#f00';
+                el.children[0].style.cursor = 'pointer';
+            }
+        });
+    });
+    buttons_array.forEach((el) => {
+        el.addEventListener("mouseout", () => {
+            el.children[0].style.borderColor = '#500';
+            el.children[0].style.cursor = 'default';
+        });
     });
 });

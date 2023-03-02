@@ -498,7 +498,6 @@ header * {
 }
 
 .InfoBlockToolbar > div {
-    width: calc(50% - 20px);
     margin: 10px;
 }
 
@@ -508,7 +507,6 @@ header * {
 }
 
 .InfoBlockToolbar svg {
-    cursor: pointer;
     width: 40px;
     height: 40px;
     padding: 15px;
@@ -517,13 +515,12 @@ header * {
 }
 
 .InfoBlockToolbar > div:first-child svg {
-    border-color: #b00;
-    fill: #b00;
+    fill: #f00;
+    cursor: pointer;
 }
 
 .InfoBlockToolbar > div:first-child svg:hover {
     border-color: #f00;
-    fill: #f00;
 }
 
 .Contents {
