@@ -99,3 +99,19 @@ function back() {
         _day_contents(Entry.id);
     }
 }
+
+function edit_entry() {
+    
+}
+
+function delete_entry() {
+
+}
+
+function save_entry() {
+
+}
+
+function done_entry() {
+
+}

@@ -227,6 +227,9 @@
 
             echo $sending_str;
             break;
+        case '!':
+            
+            break;
         case 'test':
             echo "hello";
             break;

@@ -138,7 +138,12 @@ header {
     position: relative;
 }
 
-.b_CalendarBar {
+.w_Calendar {
+    display: none;
+    position: relative;
+}
+
+.CalendarBar {
     display: flex;
     justify-content: space-around;
 }
@@ -153,9 +158,57 @@ header {
     position: relative;
 }
 
-.Date {
+.Info {
     display: block;
     position: relative;
+}
+
+.InfoBlock {
+    display: block;
+    position: relative;
+}
+
+.InfoBlockFields {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.InfoBlockFields > div {
+    display: block;
+    position: relative;
+}
+
+.InfoBlockFields > div > div {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.InfoBlockFields > div > div > div {
+    display: block;
+    position: relative;
+}
+
+.InfoBlockFields label {
+    display: block;
+    position: relative;
+}
+
+.InfoBlockToolbar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.InfoBlockToolbar > div {
+    display: flex;
+    justify-content: start;
+    position: relative;
+}
+
+.InfoBlockToolbar > div:last-child {
+    justify-content: end;
 }
 
 .CalendarItemContents {

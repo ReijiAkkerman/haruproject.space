@@ -46,6 +46,10 @@ body::-webkit-scrollbar {
     width: 0;
 }
 
+h5 {
+    padding: 20px;
+}
+
 input {
     border: none;
     border-top: 1px #500 solid;
@@ -59,6 +63,20 @@ input:focus {
     border-bottom: 1px #f00 solid;
     border-top: 1px #f00 solid;
     background-color: #f003;
+}
+
+textarea {
+    border-top: 1px #500 solid;
+    border-bottom: 1px #500 solid;
+    background-color: #f002;
+    resize: none;
+    overflow-y: auto;
+    overflow-x: none;
+    padding-left: 5px;
+}
+
+textarea:focus {
+    border-color: #f00;
 }
 
 .checkbox {
@@ -322,15 +340,24 @@ header * {
     font-weight: bold;
 }
 
-.b_CalendarBar {
+.w_Calendar {
+    width: 700px;
+    height: 700px;
+}
+
+.CalendarBar {
     width: 100%;
     height: 26px;
     background-color: #300;
 }
 
-.b_CalendarBar * {
+.CalendarBar p {
     font-family: sao;
     font-size: 24px;
+}
+
+.CalendarBar > div {
+    border: 1px #300 solid;
 }
 
 .Calendar {
@@ -409,8 +436,94 @@ header * {
     background-color: #700;
 }
 
-h5 {
-    padding: 20px;
+.Info {
+    width: 700px;
+    height: 700px;
+}
+
+.InfoBlock {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 1px #500 solid;
+    background-color: #f001;
+}
+
+.InfoBlock * {
+    font-family: sao;
+}
+
+.InfoBlock > input {
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    padding-left: 5px;
+    margin: 10px;
+    text-align: left;
+}
+
+.InfoBlock > textarea {
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    height: 300px;
+    padding-left: 5px;
+    padding-top: 3px;
+    margin: 10px;
+}
+
+.InfoBlock > input::placeholder, .InfoBlock > textarea::placeholder {
+    color: #a00;
+}
+
+.InfoBlockFields {
+    width: 100%;
+}
+
+.InfoBlockFields > div {
+    width: calc(50% - 20px);
+    border: 1px #500 solid;
+    margin: 10px;
+}
+
+.InfoBlockFields > div > div > div {
+    margin-bottom: 5px;
+}
+
+.InfoBlockFields input {
+    width: 90px;
+    font-size: 20px;
+}
+
+.InfoBlockFields label {
+    font-size: 20px;
+}
+
+.InfoBlockToolbar > div {
+    width: calc(50% - 20px);
+    margin: 10px;
+}
+
+.InfoBlockToolbar button {
+    cursor: default;
+    background-color: #0000;
+}
+
+.InfoBlockToolbar svg {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 15px;
+    border: 1px #500 solid;
+    fill: #500;
+}
+
+.InfoBlockToolbar > div:first-child svg {
+    border-color: #b00;
+    fill: #b00;
+}
+
+.InfoBlockToolbar > div:first-child svg:hover {
+    border-color: #f00;
+    fill: #f00;
 }
 
 .Contents {

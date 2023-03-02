@@ -1,15 +1,24 @@
 var selected;
-var previous;
+var previous = null;
 let today = document.querySelector('.today');
-selected = today.id;
+today.style.borderColor = '#f00';
+selected = previous = today.id;
 function _selected(Id) {
     {
-        let array = document.querySelectorAll('.CalendarButton');
-        array.forEach(b => b.style.borderColor = "#500");
-        array.forEach(c => c.style.backgroundColor = "#f001");
-        document.getElementById(Id).style.borderColor = '#f00';
-        // document.getElementById(Id).style.backgroundColor = "#fff1";
-        selected = Id;
+        if(previous) {
+            let last_active = document.querySelector(`#${previous}`);
+            let button = document.querySelector(`#${Id}`);
+            last_active.style.borderColor = '#500';
+            last_active.style.backgroundColor = '#f001';
+            button.style.borderColor = '#f00';
+            button.style.backgroundColor = '#fff1';
+        }
+        else {
+            let button = document.querySelector(`#${Id}`);
+            button.style.borderColor = '#f00';
+            button.style.backgroundColor = '#fff1';
+        }
+        selected = previous = Id;
     }
     {
         let elements_array_in = ['.checkbox', '#year_start', '#month_start', '#day_start', '#hour_start', '#minute_start', '#year_end', '#month_end', '#day_end', '#hour_end', '#minute_end'];
@@ -66,12 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
     array.forEach((id) => {
         id.addEventListener("mouseover", () => {
             if(id.id != selected)
+                id.style.borderColor = "#f00"
                 id.style.backgroundColor = "#fff1";
         });
     });
     array.forEach((id) => {
         id.addEventListener("mouseout", () => {
             if(id.id != selected)
+            id.style.borderColor = "#500"
             id.style.backgroundColor = "#f001";
         });
     });
