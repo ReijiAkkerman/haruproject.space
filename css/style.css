@@ -319,12 +319,13 @@ header * {
     height: 50px;
     font-size: 30px;
     background-color: #f001;
+    border-top: 1px #500 solid;
     border-bottom: 1px #500 solid;
 }
 
 .DetailesCalendarContentsEntry:hover {
-    background-color: #f003;
-    border-bottom: 1px #f00 solid;
+    /* background-color: #f003;
+    border-bottom: 1px #f00 solid; */
     cursor: pointer;
 }
 

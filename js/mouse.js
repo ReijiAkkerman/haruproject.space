@@ -1,6 +1,9 @@
 var selected;
 var previous = null;
 var editStatus = false;
+
+var previous_entry = null;
+
 let today = document.querySelector('.today');
 today.style.borderColor = '#f00';
 selected = previous = today.id;
@@ -10,14 +13,11 @@ function _selected(Id) {
             let last_active = document.querySelector(`#${previous}`);
             let button = document.querySelector(`#${Id}`);
             last_active.style.borderColor = '#500';
-            // last_active.style.backgroundColor = '#f001';
             button.style.borderColor = '#f00';
-            // button.style.backgroundColor = '#fff1';
         }
         else {
             let button = document.querySelector(`#${Id}`);
             button.style.borderColor = '#f00';
-            // button.style.backgroundColor = '#fff1';
         }
         selected = previous = Id;
     }

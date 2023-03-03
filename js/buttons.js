@@ -52,7 +52,7 @@ function _day_contents(id = 0) {
         today = document.querySelector(`#${selected}`);
     }
     else {
-        today = document.querySelector(`#${id}`)
+        today = document.querySelector(`#${id}`);
     }
     let todayContents = today.querySelector('.CalendarItemContentsBlock')
     let entriesBlock = document.querySelector('.DetailesCalendarContents');
@@ -63,6 +63,16 @@ function _day_contents(id = 0) {
         elem.className = 'DetailesCalendarContentsEntry';
         elem.innerHTML = todayContents.children[i].outerHTML;
         elem.addEventListener('click', function() {
+            if(previous_entry) {
+                previous_entry.style.backgroundColor = '#f001';
+                previous_entry.style.borderTopColor = '#500';
+                previous_entry.style.borderBottomColor = '#500';
+            }
+            this.style.backgroundColor = '#f003';
+            this.style.borderTopColor = '#f00';
+            this.style.borderBottomColor = '#f00';
+            previous_entry = this;
+
             let calendar = document.querySelector('.w_Calendar');
             let info = document.querySelector('.Info');
             calendar.style.display = 'none';
