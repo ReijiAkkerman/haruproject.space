@@ -82,8 +82,15 @@ function _day_contents(id = 0) {
             let array_selectors = ['header', 'description', 'year_start', 'month_start', 'day_start', 'hour_start', 'minute_start', 'year_end', 'month_end', 'day_end', 'hour_end', 'minute_end'];
             let array_elements = [];
 
-            // for(let i = 0; i < 12; i++) 
-            //     array_elements[i] = form.querySelector(`[name="${array_selectors[i]}"]`);
+            let temp = JSON.parse(localStorage.getItem('entries'));
+
+            for(let i = 0; i < 12; i++) 
+                array_elements[i] = form.querySelector(`[name="${array_selectors[i]}"]`);
+            
+            for(let j = 0; j < 12; j++) 
+                array_elements[j].value = temp[i][array_selectors[j]];
+
+
         });
         entriesBlock.append(elem);
     }

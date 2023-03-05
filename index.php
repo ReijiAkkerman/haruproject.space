@@ -214,21 +214,22 @@
             $login = _get_login($id);
             $entries = _get_entries($login);
 
-            $sending_str = '{"entries": [';
+            $sending_str = '[';
             $i = 0;
             $ending_counter = $entries->num_rows;
 
             foreach($entries as $row) {
-                $sending_str .= '{"header": "' . $row['header'] . '", "id": ' . $row['id'] . ', "description": "' . $row['content'] . '"}';
+                $sending_str .= '{"header": "' . $row['header'] . '", "id": ' . $row['id'] . ', "description": "' . $row['content'] . '", "start_timelabel": ' . $row['start_timelabel'] . ', "end_timelabel": ' . $row['end_timelabel'] . '}';
                 if($i < $ending_counter - 1) $sending_str .= ',';
                 $i++;
             }
-            $sending_str .= ']}';
+            $sending_str .= ']';
 
             echo $sending_str;
             break;
-        case '!':
-            
+        case 'edit':
+            break;
+        case 'delete':
             break;
         case 'test':
             echo "hello";

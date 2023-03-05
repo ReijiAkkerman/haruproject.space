@@ -169,7 +169,7 @@
 
         $connection = mysqli_connect('localhost', 'root', 'KisaragiEki4', 'NATSU');
         if($connection) {
-            $result = mysqli_query($connection, 'SELECT header, content, start_timelabel, id FROM ' . $login . "_calendar WHERE start_timelabel>=$start_timelabel AND end_timelabel<=$end_timelabel");
+            $result = mysqli_query($connection, 'SELECT header, content, start_timelabel, end_timelabel, id FROM ' . $login . "_calendar WHERE start_timelabel>=$start_timelabel AND end_timelabel<=$end_timelabel");
             mysqli_close($connection);
         }
         return $result;

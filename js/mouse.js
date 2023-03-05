@@ -62,8 +62,45 @@ function _selected(Id) {
             xhr.responseType = 'json';
             xhr.send(obj);
             xhr.onload = function() {
-                let content = xhr.response;
-                // alert(content['entries'][0]['description']);
+                let obj_array = [];
+                let date_start;
+                let date_end;
+                let year_start, month_start, day_start, hour_start, minute_start;
+                let year_end, month_end, day_end, hour_end, minute_end;
+                for(let i = 0; i < chosen_dayContents.children.length; i++) {
+                    date_start = new Date(xhr.response[i]['start_timelabel'] * 1000);
+                    year_start = date_start.getFullYear();
+                    month_start = date_start.getMonth();
+                    day_start = date_start.getDate();
+                    hour_start = date_start.getHours();
+                    minute_start = date_start.getMinutes();
+                    date_end = new Date(xhr.response[i]['end_timelabel'] * 1000);
+                    year_end = date_end.getFullYear();
+                    month_end = date_end.getMonth();
+                    day_end = date_end.getDate();
+                    hour_end = date_end.getHours();
+                    minute_end = date_end.getMinutes();
+                    if(xhr.response[i]['header']) header = xhr.response[i]['header'];
+                    else header = '';
+                    if(xhr.response[i]['description']) description = xhr.response[i]['description'];
+                    else description = ''; 
+                    obj_array[i] = {
+                        header: header,
+                        description: description,
+                        year_start: year_start,
+                        month_start: month_start,
+                        day_start: day_start, 
+                        hour_start: hour_start,
+                        minute_start: minute_start,
+                        year_end: year_end,
+                        month_end: month_end,
+                        day_end: day_end,
+                        hour_end: hour_end,
+                        minute_end: minute_end
+                    };
+                }
+                obj_array = JSON.stringify(obj_array);
+                localStorage.setItem('entries',obj_array);
             }
         }
         else {
