@@ -71,7 +71,7 @@ function _selected(Id) {
                     date_start = new Date(xhr.response[i]['start_timelabel'] * 1000);
                     year_start = date_start.getFullYear();
                     month_start = date_start.getMonth();
-                    day_start = date_start.getDate();
+                    day_start = date_start.getDateё();
                     hour_start = date_start.getHours();
                     minute_start = date_start.getMinutes();
                     date_end = new Date(xhr.response[i]['end_timelabel'] * 1000);
