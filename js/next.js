@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("#next").addEventListener("click", () => {
+    document.querySelector(".next").addEventListener("click", (obj) => {
+
         if(english.style.display == "none") {
             english.style.display = "block";
             russian.style.display = "none";

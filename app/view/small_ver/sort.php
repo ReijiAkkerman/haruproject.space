@@ -8,10 +8,10 @@
     <body>
         <aside class="menu">
             <a href="sort"><div>SORT</div></a>
-            <button id="next" type="button">NEXT</button>
+            <!-- <button id="next" type="button">NEXT</button> -->
             <a href="load"><div>LOAD</div></a>
         </aside>
-        <section>
+        <section class="next">
             <div id="english">
                 <?php 
                     if(isset($amount))
